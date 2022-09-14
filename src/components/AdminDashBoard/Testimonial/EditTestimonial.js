@@ -19,43 +19,58 @@ function EditTestimonial() {
     const ref = collection(app, "testimonials");
     await addDoc(ref, {
       heading: testimonial.heading,
+      name: testimonial.name,
       text: testimonial.text,
       cityAndDate: testimonial.cityAndDate,
     });
     setTestimonial({
       heading: "",
+      name: "",
       text: "",
       cityAndDate: "",
     });
   };
   return (
-    <form onSubmit={addDocsHandler}>
-      <label htmlFor="heading">Heading</label>
-      <input
-        type="text"
-        id="heading"
-        name="heading"
-        value={testimonial.heading}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="text">Text</label>
-      <input
-        type="text"
-        id="text"
-        name="text"
-        value={testimonial.text}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="cityAndDate">City and Date</label>
-      <input
-        type="text"
-        id="cityAndDate"
-        name="cityAndDate"
-        value={testimonial.cityAndDate}
-        onChange={onChangeHandler}
-      />
-      <button>Save</button>
-    </form>
+    <>
+      <form onSubmit={addDocsHandler}>
+        <label htmlFor="heading">Heading</label>
+        <input
+          type="text"
+          id="heading"
+          name="heading"
+          value={testimonial.heading}
+          onChange={onChangeHandler}
+        />
+      </form>
+      <form onSubmit={addDocsHandler}>
+        <label htmlFor="text">Name</label>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          value={testimonial.text}
+          onChange={onChangeHandler}
+        />
+        <label htmlFor="text">Text</label>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          value={testimonial.text}
+          onChange={onChangeHandler}
+        />
+
+        <label htmlFor="cityAndDate">City and Date</label>
+        <input
+          type="text"
+          id="cityAndDate"
+          name="cityAndDate"
+          value={testimonial.cityAndDate}
+          onChange={onChangeHandler}
+        />
+        <button>Save</button>
+      </form>
+    </>
   );
 }
 

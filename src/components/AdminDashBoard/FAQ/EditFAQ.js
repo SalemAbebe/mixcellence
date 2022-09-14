@@ -42,10 +42,12 @@ function EditFAQ() {
         onChange={onChangeHandler}
       />
       <label htmlFor="text">Answer</label>
-      <input
+      <textarea
         type="text"
-        id="text"
         name="text"
+        id="text"
+        cols="30"
+        rows="10"
         value={FAQ.text}
         onChange={onChangeHandler}
       />

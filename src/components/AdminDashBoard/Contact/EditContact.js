@@ -33,7 +33,7 @@ function EditContact() {
   };
   return (
     <form onSubmit={addDocsHandler}>
-      <label htmlFor="heading">Name</label>
+      <label htmlFor="heading">heading</label>
       <input
         type="text"
         id="heading"
@@ -41,14 +41,14 @@ function EditContact() {
         value={contact.heading}
         onChange={onChangeHandler}
       />
-      <label htmlFor="text">Email Address</label>
+      {/* <label htmlFor="text">Email Address</label>
       <input
         type="text"
         id="text"
         name="text"
         value={contact.text}
         onChange={onChangeHandler}
-      />
+      /> */}
 
       <button>Save</button>
     </form>

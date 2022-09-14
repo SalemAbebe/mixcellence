@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { app } from "../../../firebase/config";
 import { collection, addDoc } from "firebase/firestore";
+import "./Editevents.css";
 
 function EditEvents() {
   const [events, setEvents] = useState({
@@ -17,61 +18,78 @@ function EditEvents() {
     });
   };
 
-  const addDocHandler = async (e) => {
+  const addDocsHandler = async (e) => {
     e.preventDefault();
     const ref = collection(app, "events");
     await addDoc(ref, {
       photo1: events.photo1,
-      photo2: events.photo1,
-      photo3: events.photo1,
-      photo4: events.photo1,
-      photo5: events.photo1,
+      photo2: events.photo2,
+      photo3: events.photo3,
+      photo4: events.photo4,
+      photo5: events.photo5,
+    });
+    setEvents({
+      photo1: "",
+      photo2: "",
+      photo3: "",
+      photo4: "",
+      photo5: "",
     });
   };
   return (
-    <form>
-      <label htmlFor="photo">Photo-1</label>
-      <input
-        type="text"
-        id="photo"
-        name="photo"
-        value={events.photo1}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="photo">Photo-2</label>
-      <input
-        type="text"
-        id="photo"
-        name="photo"
-        value={events.photo2}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="photo">Photo-3</label>
-      <input
-        type="text"
-        id="photo"
-        name="photo"
-        value={events.photo3}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="photo">Photo-4</label>
-      <input
-        type="text"
-        id="photo"
-        name="photo"
-        value={events.photo4}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="photo">Photo-5</label>
-      <input
-        type="text"
-        id="photo"
-        name="photo"
-        value={events.photo5}
-        onChange={onChangeHandler}
-      />
-      <button>Save</button>
-    </form>
+    <>
+      <form onSubmit={addDocsHandler}>
+        <label htmlFor="photo1" className="event1">
+          Photo-1
+          <input
+            className="custom-file-input"
+            type="file"
+            id="photo1"
+            name="photo1"
+            value={events.photo1}
+            onChange={onChangeHandler}
+            // hidden
+          />
+        </label>
+      </form>
+      <form onSubmit={addDocsHandler}>
+        <label htmlFor="photo2">Photo-2</label>
+        <input
+          type="text"
+          id="photo2"
+          name="photo2"
+          value={events.photo2}
+          onChange={onChangeHandler}
+        />
+        <button></button>
+        {/* </form> */}
+        <label htmlFor="photo3">Photo-3</label>
+        <input
+          type="text"
+          id="photo3"
+          name="photo3"
+          value={events.photo3}
+          onChange={onChangeHandler}
+        />
+        <label htmlFor="photo4">Photo-4</label>
+        <input
+          type="text"
+          id="photo4"
+          name="photo4"
+          value={events.photo4}
+          onChange={onChangeHandler}
+        />
+        <label htmlFor="photo5">Photo-5</label>
+        <input
+          type="text"
+          id="photo5"
+          name="photo5"
+          value={events.photo5}
+          onChange={onChangeHandler}
+        />
+        <button>Save</button>
+      </form>
+    </>
   );
 }
 
