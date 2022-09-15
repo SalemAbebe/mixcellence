@@ -1,0 +1,19 @@
+.input-file-container {
+  align-items: center;
+  border: 1px dotted black;
+  display: flex;
+  height: 284px;
+  justify-content: center;
+  width: 424px;
+}
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+  width: 60;
+  height: 60;
+}
+
+.input-button {
+  border-radius: 50%;
+}
