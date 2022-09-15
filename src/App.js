@@ -22,6 +22,7 @@ function App() {
     return () => unsub();
   }, []);
   console.log(data);
+
   return (
     <div className="App">
       <Outlet />
