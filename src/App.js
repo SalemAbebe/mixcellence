@@ -10,7 +10,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let ref = collection(app, "services");
+    let ref = collection(app, "events");
     const unsub = onSnapshot(ref, (info) => {
       let arr = [];
       info.docs.forEach((doc) => {
