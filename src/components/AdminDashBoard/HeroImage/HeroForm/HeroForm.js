@@ -16,7 +16,6 @@ function HeroForm() {
   const dispatch = useDispatch();
   const gotId = useSelector((state) => state.hero.backEnd.gotId);
   const heroInfo = useSelector((state) => state.hero.backEnd.heroInfo);
-  const imageURL = useSelector((state) => state.hero.backEnd.imageURL);
   const heading = useRef();
   const subHeading = useRef();
 
