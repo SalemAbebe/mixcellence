@@ -9,13 +9,13 @@ import { useSelector } from "react-redux";
 
 function HeroInputFile() {
   const isLoading = useSelector((state) => state.hero.backEnd.isLoading);
-  const heroInfo = useSelector((state) => state.hero.backEnd.heroInfo);
+  const URL = useSelector((state) => state.hero.backEnd.imageURL);
 
   return (
     <div>
       {isLoading ? <p>...Loading</p> : null}
-      {!heroInfo.photo && !isLoading && <InputFile />}
-      {heroInfo.photo && !isLoading && <PreviewImage />}
+      {!URL && !isLoading && <InputFile />}
+      {URL && !isLoading && <PreviewImage />}
     </div>
   );
 }

@@ -5,11 +5,15 @@ const heroSlice = createSlice({
   initialState: {
     backEnd: {
       filePath: null,
-      imageURL: "",
-      heroInfo: {
+      imageURL: null,
+      formInfo: {
+        heading: null,
+        subheading: null,
+      },
+      databaseInfo: {
         id: null,
-        heading: "",
-        subHeading: "",
+        heading: null,
+        subHeading: null,
         photo: null,
       },
       gotId: false,
@@ -33,6 +37,14 @@ const heroSlice = createSlice({
     },
   },
   reducers: {
+    handleDatabaseInfo(state, action) {
+      state.backEnd.databaseInfo = {
+        id: action.payload.id,
+        heading: action.payload.heading,
+        subHeading: action.payload.subHeading,
+        photo: action.payload.imageURL && action.payload.imageURL,
+      };
+    },
     handleError(state, action) {
       state.error = {
         isError: action.payload.isError,
@@ -42,20 +54,18 @@ const heroSlice = createSlice({
     handleFilePath(state, action) {
       state.backEnd.filePath = action.payload;
     },
+    handleFormInfo(state, action) {
+      state.backEnd.formInfo = {
+        heading: action.payload.heading,
+        subHeading: action.payload.subHeading,
+      };
+    },
     handleFrontEndHero(state, action) {
       state.frontEnd.heroInfo = {
         id: action.payload.id && action.payload.id,
         heading: action.payload.heading && action.payload.heading,
         subHeading: action.payload.subHeading && action.payload.subHeading,
         photo: action.payload.photo && action.payload.photo,
-      };
-    },
-    handleHeroInfo(state, action) {
-      state.backEnd.heroInfo = {
-        id: action.payload.id,
-        heading: action.payload.heading,
-        subHeading: action.payload.subHeading,
-        photo: action.payload.imageURL,
       };
     },
     handleGotId(state, action) {

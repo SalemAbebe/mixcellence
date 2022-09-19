@@ -2,13 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
-import { updateHeroStorageHandler } from "../../../../../ReduxStore/thunks/Hero/HeroStorageThunks";
+import { heroStorageHandler } from "../../../../../ReduxStore/thunks/Hero/HeroStorageThunks";
+
+//styles
+import "./PreviewImage.scss";
 
 function PreviewImage() {
   const dispatch = useDispatch();
   const [newImageFile, setNewImageFile] = useState(null);
-  const filePath = useSelector((state) => state.hero.backEnd.filePath);
-  const heroInfo = useSelector((state) => state.hero.backEnd.heroInfo);
   const imageURL = useSelector((state) => state.hero.backEnd.imageURL);
   const file = useRef();
 
@@ -22,11 +23,10 @@ function PreviewImage() {
   };
 
   useEffect(() => {
-    if (newImageFile !== null) {
-      dispatch(updateHeroStorageHandler(newImageFile, filePath));
+    if (newImageFile) {
+      dispatch(heroStorageHandler(newImageFile));
     }
-    setNewImageFile(null);
-  }, [filePath, newImageFile, dispatch]);
+  }, [newImageFile, dispatch]);
 
   return (
     <div>
@@ -37,9 +37,9 @@ function PreviewImage() {
         style={{ display: "none" }}
         onChange={onChangeHandler}
       />
-      <button onClick={newImageSelectHandler}>
+      <button className="preview-image-button" onClick={newImageSelectHandler}>
         <img
-          src={heroInfo.photo ? heroInfo.photo : ""}
+          src={imageURL}
           alt="hero"
           width={"424px"}
           height={"284px"}

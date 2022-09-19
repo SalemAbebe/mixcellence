@@ -39,7 +39,7 @@ export const getFiresbaseDataHandler = () => {
         arr.push({ id: doc.id, ...doc.data() });
       });
       dispatch(
-        heroActions.handleHeroInfo({
+        heroActions.handleDatabaseInfo({
           id: arr[0].id,
           heading: arr[0].heading,
           subHeading: arr[0].subHeading,
@@ -50,16 +50,16 @@ export const getFiresbaseDataHandler = () => {
   };
 };
 
-export const updateFirebaseHandler = (hero, heading, subHeading, photo) => {
+export const updateFirebaseHandler = (id, heading, subHeading, url) => {
   return async (dispatch) => {
     //connect to firestore database
-    const docRef = doc(app, "hero-image", hero.id);
+    const docRef = doc(app, "hero-image", id);
 
     //update doc on firestore database
     await updateDoc(docRef, {
       heading: heading,
       subHeading: subHeading,
-      photo: photo,
+      photo: url,
     });
 
     dispatch(heroActions.handleGotId(true));

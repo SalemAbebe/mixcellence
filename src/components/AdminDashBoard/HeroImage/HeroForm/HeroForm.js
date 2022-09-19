@@ -14,8 +14,10 @@ import "./HeroForm.scss";
 
 function HeroForm() {
   const dispatch = useDispatch();
+  const formInfo = useSelector((state) => state.hero.backEnd.formInfo);
   const gotId = useSelector((state) => state.hero.backEnd.gotId);
-  const heroInfo = useSelector((state) => state.hero.backEnd.heroInfo);
+  const databaseInfo = useSelector((state) => state.hero.backEnd.databaseInfo);
+  const imageURL = useSelector((state) => state.hero.backEnd.imageURL);
   const heading = useRef();
   const subHeading = useRef();
 
@@ -25,21 +27,17 @@ function HeroForm() {
     //checks to see if there is a collection
     //if collection doesn't exist creates one
     //else updates the collection
-    if (!heroInfo.id) {
+    if (!databaseInfo.id) {
       dispatch(
-        addFirebaseHandler(
-          heading.current.value,
-          subHeading.current.value,
-          heroInfo.photo
-        )
+        addFirebaseHandler(formInfo.heading, formInfo.subHeading, imageURL)
       );
     } else {
       dispatch(
         updateFirebaseHandler(
-          heroInfo,
-          heading.current.value,
-          subHeading.current.value,
-          heroInfo.photo
+          databaseInfo.id,
+          formInfo.heading,
+          formInfo.subHeading,
+          imageURL
         )
       );
     }
@@ -47,7 +45,7 @@ function HeroForm() {
 
   const onChangeHandler = (e) => {
     dispatch(
-      heroActions.handleHeroInfo({
+      heroActions.handleFormInfo({
         heading: heading.current.value,
         subHeading: subHeading.current.value,
       })
@@ -56,11 +54,11 @@ function HeroForm() {
 
   useEffect(() => {
     //gets realtime snapshots of database
-    if (gotId) {
-      dispatch(getFiresbaseDataHandler());
-    }
-    dispatch(heroActions.handleGotId(false));
-  }, [dispatch, gotId]);
+    dispatch(getFiresbaseDataHandler());
+    heading.current.value = databaseInfo.heading;
+    subHeading.current.value = databaseInfo.subHeading;
+    dispatch(heroActions.handleImageURL(databaseInfo.photo));
+  }, [dispatch, gotId, databaseInfo]);
 
   return (
     <form onSubmit={submitFormHandler}>
@@ -70,7 +68,6 @@ function HeroForm() {
           type="text"
           id="hero-heading"
           ref={heading}
-          value={heroInfo.heading}
           onChange={onChangeHandler}
         />
       </div>
@@ -80,7 +77,6 @@ function HeroForm() {
           type="text"
           id="hero-sub-heading"
           ref={subHeading}
-          value={heroInfo.subHeading}
           onChange={onChangeHandler}
         />
       </div>
