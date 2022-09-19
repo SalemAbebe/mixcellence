@@ -1,0 +1,40 @@
+.testimonial-section {
+  width: 90%;
+  margin: auto;
+  margin-left: auto;
+  margin-right: 0;
+
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+  form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: 0;
+    align-content: center;
+    .heading {
+    }
+    input {
+      width: 328px;
+      height: 40px;
+      margin: 5px 0;
+    }
+    textarea {
+      width: 329px;
+      height: 247px;
+    }
+    .testimonial-wrapper {
+      display: flex;
+      align-items: center;
+
+      .testimonial {
+        //
+        textarea {
+          width: 329px;
+          height: 247px;
+        }
+      }
+    }
+  }
+}
