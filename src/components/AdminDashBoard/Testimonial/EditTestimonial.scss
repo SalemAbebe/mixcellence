@@ -1,13 +1,19 @@
 .testimonial-section {
+  width: 90%;
+  margin: auto;
+  margin-left: auto;
+  margin-right: 0;
+
   h1 {
     font-size: 50px;
+    text-align: center;
   }
   form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: 0;
+    align-content: center;
     .heading {
-      display: block;
-      label {
-        align-items: left;
-      }
     }
     input {
       width: 328px;
@@ -21,7 +27,7 @@
     .testimonial-wrapper {
       display: flex;
       align-items: center;
-      background-color: aqua;
+
       .testimonial {
         //
         textarea {
