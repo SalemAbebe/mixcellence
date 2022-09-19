@@ -10,6 +10,7 @@ import {
 
 //redux
 import { heroActions } from "../../slices/HeroSlice";
+import { notificationActions } from "../../slices/NotificationSlice";
 
 export const addFirebaseHandler = (heading, subHeading, photo) => {
   return async (dispatch) => {
@@ -21,9 +22,23 @@ export const addFirebaseHandler = (heading, subHeading, photo) => {
       heading: heading,
       subHeading: subHeading,
       photo: photo,
-    });
-
-    dispatch(heroActions.handleGotId(true));
+    })
+      .then(() => {
+        dispatch(
+          notificationActions.handleSuccess({
+            isSuccess: true,
+            message: "Collection created successfully!",
+          })
+        );
+      })
+      .catch(() => {
+        dispatch(
+          notificationActions.handleError({
+            isError: true,
+            message: "There was an error creating a collection!",
+          })
+        );
+      });
   };
 };
 
@@ -60,8 +75,22 @@ export const updateFirebaseHandler = (id, heading, subHeading, url) => {
       heading: heading,
       subHeading: subHeading,
       photo: url,
-    });
-
-    dispatch(heroActions.handleGotId(true));
+    })
+      .then(() => {
+        dispatch(
+          notificationActions.handleSuccess({
+            isSuccess: true,
+            message: "Document updated successfully!",
+          })
+        );
+      })
+      .catch(() => {
+        dispatch(
+          notificationActions.handleError({
+            isError: true,
+            message: "There was an Error updating the document!",
+          })
+        );
+      });
   };
 };
