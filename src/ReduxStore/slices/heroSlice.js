@@ -3,15 +3,57 @@ import { createSlice } from "@reduxjs/toolkit";
 const heroSlice = createSlice({
   name: "hero",
   initialState: {
-    heading: "",
-    subHeading: "",
-    photo: "",
+    backEnd: {
+      imageURL: null,
+      formInfo: {
+        heading: null,
+        subheading: null,
+      },
+      databaseInfo: {
+        id: null,
+        heading: null,
+        subHeading: null,
+        photo: null,
+      },
+      isLoading: false,
+    },
+    frontEnd: {
+      heroInfo: {
+        id: null,
+        heading: null,
+        subHeading: null,
+        photo: null,
+      },
+    },
   },
   reducers: {
-    heroInfo(state, action) {
-      state.heading = action.payload.heading;
-      state.subHeading = action.payload.subHeading;
-      state.photo = action.payload.photo;
+    handleDatabaseInfo(state, action) {
+      state.backEnd.databaseInfo = {
+        id: action.payload.id,
+        heading: action.payload.heading,
+        subHeading: action.payload.subHeading,
+        photo: action.payload.imageURL,
+      };
+    },
+    handleFormInfo(state, action) {
+      state.backEnd.formInfo = {
+        heading: action.payload.heading,
+        subHeading: action.payload.subHeading,
+      };
+    },
+    handleFrontEndHero(state, action) {
+      state.frontEnd.heroInfo = {
+        id: action.payload.id && action.payload.id,
+        heading: action.payload.heading && action.payload.heading,
+        subHeading: action.payload.subHeading && action.payload.subHeading,
+        photo: action.payload.photo && action.payload.photo,
+      };
+    },
+    handleImageURL(state, action) {
+      state.backEnd.imageURL = action.payload;
+    },
+    handleIsLoading(state, action) {
+      state.backEnd.isLoading = action.payload;
     },
   },
 });

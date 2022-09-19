@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-// redux
+//redux
 import store from "./ReduxStore/store";
 import { Provider } from "react-redux";
 
 //routes
-import RoutesPath from "./Routes/Routes";
 import { BrowserRouter as Router } from "react-router-dom";
+import RoutesPath from "./Routes/Routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
