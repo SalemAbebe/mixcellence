@@ -1,67 +1,44 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-
-//firebase
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import React, { useEffect, useRef, useState } from "react";
 
 //redux
 import { useDispatch } from "react-redux";
-import { heroActions } from "../../../../../ReduxStore/slices/heroSlice";
+import { heroStorageHandler } from "../../../../../ReduxStore/thunks/Hero/HeroStorageThunks";
 
 //styles
-import "./InputFile.css";
+import "./InputFile.scss";
 
 function InputFile() {
   const dispatch = useDispatch();
   const [imageFile, setImageFile] = useState(null);
   const file = useRef();
 
+  //allows button to listen to input
   const imageSelectHandler = (e) => {
     file.current.click();
   };
 
-  const imageStorageHandler = useCallback(async () => {
-    dispatch(heroActions.handleIsLoading(true));
-    dispatch(heroActions.handleFilePath(`images/hero/${imageFile.name}`));
-    //connect to storage
-    const storage = getStorage();
-    const storageRef = ref(storage, `images/hero/${imageFile.name}`);
-
-    //save file to storage
-    await uploadBytes(storageRef, imageFile).then((res) => {
-      console.log(res);
-    });
-
-    //get URL for image from storage
-    let imageURL = "";
-    await getDownloadURL(storageRef).then((res) => {
-      imageURL = res;
-      dispatch(heroActions.handleImageURL(imageURL));
-    });
-
-    dispatch(heroActions.handleIsLoading(false));
-  }, [imageFile, dispatch]);
-
+  //listen to changes in the input
   const onChangeHandler = (e) => {
     setImageFile(e.target.files[0]);
   };
 
   useEffect(() => {
     if (imageFile !== null) {
-      imageStorageHandler();
+      dispatch(heroStorageHandler(imageFile));
     }
     setImageFile(null);
-  }, [imageFile, imageStorageHandler]);
+  }, [imageFile, dispatch]);
 
   return (
     <div className="input-file-container">
-      <div className="input-control">
-        <button className="input-button" onClick={imageSelectHandler}>
+      <div className="input-file-control">
+        <button className="input-file-button" onClick={imageSelectHandler}>
           +
         </button>
-        <label htmlFor="photo">Photo</label>
+        <label htmlFor="photo">Add Photo</label>
         <input
           type="file"
-          id="photo"
+          id="input-file-input"
           ref={file}
           style={{ display: "none" }}
           onChange={onChangeHandler}

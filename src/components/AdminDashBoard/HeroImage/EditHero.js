@@ -5,7 +5,7 @@ import HeroForm from "./HeroForm/HeroForm";
 import HeroInputFile from "./HeroInputFile/HeroInputFile";
 
 //styles
-import "./EditHero.css";
+import "./EditHero.scss";
 
 function EditHero() {
   return (

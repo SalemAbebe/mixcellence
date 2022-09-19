@@ -1,0 +1,28 @@
+form {
+  .hero-form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+
+    input {
+      height: 40px;
+      width: 424px;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+  }
+
+  .hero-form-button {
+    bottom: -10%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    left: 45.5%;
+    padding: 8px 44px;
+    position: absolute;
+  }
+}
