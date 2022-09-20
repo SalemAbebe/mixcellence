@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 //slices
 import aboutReducer from "./slices/AboutSlice";
 import heroReducer from "./slices/HeroSlice";
-import testimonialReducer from "./slices/testimonialSlice";
+import testimonialReducer from "./slices/TestimonialSlice";
 import notificationReducer from "./slices/NotificationSlice";
 
 const store = configureStore({
