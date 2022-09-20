@@ -60,6 +60,7 @@ function HeroForm() {
         <input
           type="text"
           id="hero-heading"
+          name="heading"
           value={formInfo.heading}
           onChange={onChangeHandler}
         />
@@ -69,6 +70,7 @@ function HeroForm() {
         <input
           type="text"
           id="hero-sub-heading"
+          name="subHeading"
           value={formInfo.subHeading}
           onChange={onChangeHandler}
         />
