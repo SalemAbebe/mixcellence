@@ -7,7 +7,7 @@ import Welcome from "./Welcome/Welcome";
 
 function SideBar() {
   return (
-    <div>
+    <div className="section-wrapper">
       <div className="admin-header">MIXCELLENCE</div>
       <div className="sidebar">
         <Welcome />
