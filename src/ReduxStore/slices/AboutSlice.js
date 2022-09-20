@@ -1,28 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const heroSlice = createSlice({
-  name: "hero",
+const aboutSlice = createSlice({
+  name: "about",
   initialState: {
-    dataId: null,
-    heroInfo: {
+    aboutInfo: {
       id: null,
       heading: null,
-      subHeading: null,
+      text: null,
       photo: null,
     },
+    dataId: null,
     imageURL: null,
     isLoading: false,
   },
   reducers: {
-    handleHeroInfo(state, action) {
-      state.dataId = action.payload.id;
-      state.heroInfo = {
+    handleDatabaseInfo(state, action) {
+      state.aboutInfo = {
         id: action.payload.id,
         heading: action.payload.heading,
-        subHeading: action.payload.subHeading,
-        photo: action.payload.imageURL,
+        text: action.payload.text,
+        photo: action.payload.photo,
       };
-      state.imageURL = action.payload.imageURL;
+      state.dataId = action.payload.id;
+      state.imageURL = action.payload.photo;
     },
     handleImageURL(state, action) {
       state.imageURL = action.payload;
@@ -33,6 +33,6 @@ const heroSlice = createSlice({
   },
 });
 
-export const heroActions = heroSlice.actions;
+export const aboutActions = aboutSlice.actions;
 
-export default heroSlice.reducer;
+export default aboutSlice.reducer;

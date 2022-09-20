@@ -1,0 +1,53 @@
+form {
+  .about-heading-button {
+    background-color: #9794cc;
+    border: none;
+    bottom: -10%;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    left: 46%;
+    padding: 8px 44px;
+    position: absolute;
+  }
+
+  .about-heading-control {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+
+    input {
+      height: 40px;
+      width: 424px;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      height: 284px;
+      width: 424px;
+    }
+  }
+  .about-text-control {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+
+    label {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      height: 284px;
+      padding: 15px 33px;
+      width: 424px;
+    }
+  }
+}

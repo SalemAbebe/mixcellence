@@ -6,38 +6,31 @@ import {
   addFirebaseHandler,
   getFirebaseDataHandler,
   updateFirebaseHandler,
-} from "../../../../ReduxStore/thunks/Hero/HeroDatabaseThunks";
+} from "../../../../ReduxStore/thunks/About/AboutDatabaseThunks";
 
 //styles
-import "./HeroForm.scss";
+import "./AboutHeadingForm.scss";
 
-function HeroForm() {
+function AboutHeadingForm() {
   const dispatch = useDispatch();
   const [formInfo, setFormInfo] = useState({
     heading: "",
-    subHeading: "",
+    text: "",
   });
-  const dataId = useSelector((state) => state.hero.dataId);
-  const imageURL = useSelector((state) => state.hero.imageURL);
+  const dataId = useSelector((state) => state.about.dataId);
+  const imageURL = useSelector((state) => state.about.imageURL);
 
-  const submitFormHandler = async (e) => {
+  const submitFormHandler = (e) => {
     e.preventDefault();
 
     //checks to see if there is a collection
     //if collection doesn't exist creates one
     //else updates the collection
     if (dataId === null) {
-      dispatch(
-        addFirebaseHandler(formInfo.heading, formInfo.subHeading, imageURL)
-      );
+      dispatch(addFirebaseHandler(formInfo.heading, formInfo.text, imageURL));
     } else {
       dispatch(
-        updateFirebaseHandler(
-          dataId,
-          formInfo.heading,
-          formInfo.subHeading,
-          imageURL
-        )
+        updateFirebaseHandler(dataId, formInfo.heading, formInfo.text, imageURL)
       );
     }
   };
@@ -55,27 +48,30 @@ function HeroForm() {
 
   return (
     <form onSubmit={submitFormHandler}>
-      <div className="hero-form-control">
+      <div className="about-heading-control">
         <label htmlFor="heading">Heading</label>
         <input
+          id="heading"
+          name="heading"
           type="text"
-          id="hero-heading"
           value={formInfo.heading}
           onChange={onChangeHandler}
         />
       </div>
-      <div className="hero-form-control">
-        <label htmlFor="sub-heading">Sub-Heading</label>
-        <input
-          type="text"
-          id="hero-sub-heading"
-          value={formInfo.subHeading}
+      <div className="about-text-control">
+        <label htmlFor="text">Text</label>
+        <textarea
+          id="text"
+          cols="30"
+          rows="10"
+          name="text"
+          value={formInfo.text}
           onChange={onChangeHandler}
-        />
+        ></textarea>
       </div>
-      <button className="hero-form-button">Save</button>
+      <button className="about-heading-button">Save</button>
     </form>
   );
 }
 
-export default HeroForm;
+export default AboutHeadingForm;

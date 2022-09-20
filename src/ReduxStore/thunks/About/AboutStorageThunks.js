@@ -1,17 +1,17 @@
-//firebase
+//firebase storage
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 //redux
-import { heroActions } from "../../slices/HeroSlice";
+import { aboutActions } from "../../slices/AboutSlice";
 import { notificationActions } from "../../slices/NotificationSlice";
 
-export const heroStorageHandler = (data) => {
+export const aboutStorageHandler = (data) => {
   return async (dispatch) => {
-    dispatch(heroActions.handleIsLoading(true));
+    dispatch(aboutActions.handleIsLoading(true));
 
     //connect to storage
     const storage = getStorage();
-    const storageRef = ref(storage, "images/hero/hero.png");
+    const storageRef = ref(storage, "images/about/about.png");
 
     //save file to storage
     await uploadBytes(storageRef, data)
@@ -37,7 +37,7 @@ export const heroStorageHandler = (data) => {
     await getDownloadURL(storageRef)
       .then((res) => {
         fileURL = res;
-        dispatch(heroActions.handleImageURL(fileURL));
+        dispatch(aboutActions.handleImageURL(fileURL));
         dispatch(
           notificationActions.handleSuccess({
             isSuccess: true,
@@ -54,6 +54,6 @@ export const heroStorageHandler = (data) => {
         );
       });
 
-    dispatch(heroActions.handleIsLoading(false));
+    dispatch(aboutActions.handleIsLoading(false));
   };
 };

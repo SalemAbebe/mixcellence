@@ -9,19 +9,19 @@ import {
 } from "firebase/firestore";
 
 //redux
-import { heroActions } from "../../slices/HeroSlice";
+import { aboutActions } from "../../slices/AboutSlice";
 import { notificationActions } from "../../slices/NotificationSlice";
 
-export const addFirebaseHandler = (heading, subHeading, photo) => {
+export const addFirebaseHandler = (heading, text, url) => {
   return async (dispatch) => {
-    //connect to firestore database
-    const collectionRef = collection(app, "hero-image");
+    //connect to firebase
+    const firebaseRef = collection(app, "about");
 
-    //send form and image to a new collection
-    await addDoc(collectionRef, {
+    //send heading to new collection
+    await addDoc(firebaseRef, {
       heading: heading,
-      subHeading: subHeading,
-      photo: photo,
+      text: text,
+      photo: url,
     })
       .then(() => {
         dispatch(
@@ -45,7 +45,7 @@ export const addFirebaseHandler = (heading, subHeading, photo) => {
 export const getFirebaseDataHandler = (setData) => {
   return (dispatch) => {
     //connect to firestore database
-    const firestoreRef = collection(app, "hero-image");
+    const firestoreRef = collection(app, "about");
 
     //get firebase data snapshot
     onSnapshot(firestoreRef, (res) => {
@@ -55,29 +55,29 @@ export const getFirebaseDataHandler = (setData) => {
       });
       setData({
         heading: arr[0].heading,
-        subHeading: arr[0].subHeading,
+        text: arr[0].text,
       });
       dispatch(
-        heroActions.handleHeroInfo({
+        aboutActions.handleDatabaseInfo({
           id: arr[0].id,
           heading: arr[0].heading,
-          subHeading: arr[0].subHeading,
-          imageURL: arr[0].photo,
+          text: arr[0].text,
+          photo: arr[0].photo,
         })
       );
     });
   };
 };
 
-export const updateFirebaseHandler = (id, heading, subHeading, url) => {
+export const updateFirebaseHandler = (id, heading, text, url) => {
   return async (dispatch) => {
-    //connect to firestore database
-    const docRef = doc(app, "hero-image", id);
+    //connect to firebase
+    const firebaseRef = doc(app, "about", id);
 
-    //update doc on firestore database
-    await updateDoc(docRef, {
+    //update heading doc
+    await updateDoc(firebaseRef, {
       heading: heading,
-      subHeading: subHeading,
+      text: text,
       photo: url,
     })
       .then(() => {

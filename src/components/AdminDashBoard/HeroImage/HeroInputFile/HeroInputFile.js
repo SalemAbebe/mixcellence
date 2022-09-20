@@ -8,8 +8,8 @@ import PreviewImage from "./PreviewImage/PreviewImage";
 import { useSelector } from "react-redux";
 
 function HeroInputFile() {
-  const isLoading = useSelector((state) => state.hero.backEnd.isLoading);
-  const URL = useSelector((state) => state.hero.backEnd.imageURL);
+  const isLoading = useSelector((state) => state.hero.isLoading);
+  const URL = useSelector((state) => state.hero.imageURL);
 
   return (
     <div>

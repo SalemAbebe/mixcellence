@@ -2,15 +2,15 @@ import React, { useRef, useState, useEffect } from "react";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
-import { heroStorageHandler } from "../../../../../ReduxStore/thunks/Hero/HeroStorageThunks";
+import { aboutStorageHandler } from "../../../../../ReduxStore/thunks/About/AboutStorageThunks";
 
 //styles
 import "./PreviewImage.scss";
 
-function PreviewImage() {
+function PreviewFile() {
   const dispatch = useDispatch();
   const [newImageFile, setNewImageFile] = useState(null);
-  const imageURL = useSelector((state) => state.hero.imageURL);
+  const imageURL = useSelector((state) => state.about.imageURL);
   const file = useRef();
 
   const newImageSelectHandler = (e) => {
@@ -24,7 +24,7 @@ function PreviewImage() {
 
   useEffect(() => {
     if (newImageFile) {
-      dispatch(heroStorageHandler(newImageFile));
+      dispatch(aboutStorageHandler(newImageFile));
     }
   }, [newImageFile, dispatch]);
 
@@ -40,7 +40,7 @@ function PreviewImage() {
       <button className="preview-image-button" onClick={newImageSelectHandler}>
         <img
           src={imageURL}
-          alt="hero"
+          alt="about"
           width={"424px"}
           height={"284px"}
           style={{ cursor: "pointer" }}
@@ -50,4 +50,4 @@ function PreviewImage() {
   );
 }
 
-export default PreviewImage;
+export default PreviewFile;
