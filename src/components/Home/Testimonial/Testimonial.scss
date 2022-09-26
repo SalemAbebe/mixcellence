@@ -1,0 +1,36 @@
+$primary-color: #fff;
+$secondary-color: #504c9c;
+$tertiary-color: #9794cc;
+$background-color: #e8e5ee;
+$black: #000;
+
+.testimonials-home {
+  background-color: $background-color;
+  height: 100vh;
+  width: 100vw;
+  padding: 15px 0 50px 0;
+  .testimonials-home-title {
+    text-align: center;
+    padding: 15px;
+  }
+  .testimonials-home-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .testimonials-home {
+      width: 30%;
+      height: 60vh;
+      background-color: $primary-color;
+      padding: 35px;
+      align-items: center;
+      box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
+      -webkit-box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
+      -moz-box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
+      .name {
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+}
