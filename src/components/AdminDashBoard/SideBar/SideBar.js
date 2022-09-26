@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import "./SideBar.scss";
 //components
 import Welcome from "./Welcome/Welcome";
+// image
+import homeIcon from "../../../Assets/images/home-icon.png";
 
 function SideBar() {
   return (
@@ -11,7 +13,11 @@ function SideBar() {
       <div className="admin-header">MIXCELLENCE</div>
       <div className="sidebar">
         <Welcome />
-        <button></button>
+        <button>
+          <NavLink to={"/"}>
+            <img src={homeIcon} alt="home-icon" />
+          </NavLink>
+        </button>
         <ul>
           <li>
             <NavLink to={"/admin/edit-hero"}>Hero Image</NavLink>
