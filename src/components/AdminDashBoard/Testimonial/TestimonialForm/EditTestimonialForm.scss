@@ -29,15 +29,45 @@ form {
       textarea {
         width: 329px;
         height: 247px;
+        &:hover {
+        }
       }
     }
   }
   .button {
-    align-items: center;
+    // align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 17px;
+
+    position: absolute;
+    width: 129px;
+    height: 44px;
+    left: 50%;
+    top: 80%;
 
     button {
       background-color: $tertiary-color;
       cursor: pointer;
+      padding: 11px 45px;
+      border: none;
+
+      /* Body Large */
+
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 28px;
+      color: #ffffff;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
     }
   }
 }
