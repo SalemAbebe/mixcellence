@@ -15,6 +15,7 @@ function EditHero() {
         <span />
         <HeroForm />
         <HeroInputFile />
+        <button className="hero-form-button">Save</button>
       </div>
     </div>
   );

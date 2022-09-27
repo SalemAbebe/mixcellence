@@ -10,7 +10,7 @@ function ErrorModal({ errorHandler }) {
   const error = useSelector((state) => state.notification.error);
 
   return (
-    <div className="error-modal-container" onclick={errorHandler}>
+    <div className="error-modal-container" onClick={errorHandler}>
       <p>{error.message}</p>
     </div>
   );

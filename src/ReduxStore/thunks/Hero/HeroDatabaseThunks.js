@@ -1,4 +1,4 @@
-//firebase
+//firestore database
 import { app } from "../../../firebase/config";
 import {
   addDoc,
@@ -17,7 +17,7 @@ export const addFirebaseHandler = (heading, subHeading, photo) => {
     //connect to firestore database
     const collectionRef = collection(app, "hero-image");
 
-    //send form and image to a new collection
+    //create new collection and add doc
     await addDoc(collectionRef, {
       heading: heading,
       subHeading: subHeading,
@@ -42,21 +42,23 @@ export const addFirebaseHandler = (heading, subHeading, photo) => {
   };
 };
 
-export const getFirebaseDataHandler = (setData) => {
+export const getFirebaseDataHandler = () => {
   return (dispatch) => {
     //connect to firestore database
-    const firestoreRef = collection(app, "hero-image");
+    const collectionRef = collection(app, "hero-image");
 
     //get firebase data snapshot
-    onSnapshot(firestoreRef, (res) => {
+    onSnapshot(collectionRef, (res) => {
       let arr = [];
       res.docs.forEach((doc) => {
         arr.push({ id: doc.id, ...doc.data() });
       });
-      setData({
-        heading: arr[0].heading,
-        subHeading: arr[0].subHeading,
-      });
+      dispatch(
+        heroActions.handleFormInfo({
+          heading: arr[0].heading,
+          subHeading: arr[0].subHeading,
+        })
+      );
       dispatch(
         heroActions.handleHeroInfo({
           id: arr[0].id,
@@ -74,7 +76,7 @@ export const updateFirebaseHandler = (id, heading, subHeading, url) => {
     //connect to firestore database
     const docRef = doc(app, "hero-image", id);
 
-    //update doc on firestore database
+    //update existing doc
     await updateDoc(docRef, {
       heading: heading,
       subHeading: subHeading,

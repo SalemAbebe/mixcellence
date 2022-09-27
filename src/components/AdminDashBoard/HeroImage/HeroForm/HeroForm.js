@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
+import { heroActions } from "../../../../ReduxStore/slices/HeroSlice";
 import {
   addFirebaseHandler,
   getFirebaseDataHandler,
@@ -13,12 +14,11 @@ import "./HeroForm.scss";
 
 function HeroForm() {
   const dispatch = useDispatch();
-  const [formInfo, setFormInfo] = useState({
-    heading: "",
-    subHeading: "",
-  });
   const dataId = useSelector((state) => state.hero.dataId);
+  const formInfo = useSelector((state) => state.hero.formInfo);
   const imageURL = useSelector((state) => state.hero.imageURL);
+  const heading = useRef();
+  const subHeading = useRef();
 
   const submitFormHandler = async (e) => {
     e.preventDefault();
@@ -43,14 +43,19 @@ function HeroForm() {
   };
 
   const onChangeHandler = (e) => {
-    setFormInfo((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
-    });
+    dispatch(
+      heroActions.handleFormInfo({
+        heading: heading.current.value,
+        subHeading: subHeading.current.value,
+      })
+    );
   };
 
   useEffect(() => {
     //gets realtime snapshots of database
-    dispatch(getFirebaseDataHandler(setFormInfo));
+    const unSub = dispatch(getFirebaseDataHandler());
+
+    return () => unSub;
   }, [dispatch]);
 
   return (
@@ -60,7 +65,7 @@ function HeroForm() {
         <input
           type="text"
           id="hero-heading"
-          name="heading"
+          ref={heading}
           value={formInfo.heading}
           onChange={onChangeHandler}
         />
@@ -70,12 +75,11 @@ function HeroForm() {
         <input
           type="text"
           id="hero-sub-heading"
-          name="subHeading"
+          ref={subHeading}
           value={formInfo.subHeading}
           onChange={onChangeHandler}
         />
       </div>
-      <button className="hero-form-button">Save</button>
     </form>
   );
 }

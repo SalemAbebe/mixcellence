@@ -15,6 +15,13 @@ function EditAbout() {
         <span />
         <AboutHeadingForm />
         <AboutInputFile />
+        <button
+          className="about-heading-button"
+          form="about-form"
+          type="submit"
+        >
+          Save
+        </button>
       </div>
     </div>
   );

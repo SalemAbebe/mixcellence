@@ -10,6 +10,10 @@ const aboutSlice = createSlice({
       photo: null,
     },
     dataId: null,
+    formInfo: {
+      heading: "",
+      text: "",
+    },
     imageURL: null,
     isLoading: false,
   },
@@ -23,6 +27,12 @@ const aboutSlice = createSlice({
       };
       state.dataId = action.payload.id;
       state.imageURL = action.payload.photo;
+    },
+    handleFormInfo(state, action) {
+      state.formInfo = {
+        heading: action.payload.heading,
+        text: action.payload.text,
+      };
     },
     handleImageURL(state, action) {
       state.imageURL = action.payload;
