@@ -224,6 +224,9 @@ function EditTestimonialForm() {
             value={formInfo.text}
             onChange={onChangeHandler}
             placeholder="testimonial"
+            rows="7"
+            cols="30"
+            maxlength="100"
           />
           <input
             type="text"
@@ -250,6 +253,9 @@ function EditTestimonialForm() {
             value={formInfo.text1}
             onChange={onChangeHandler}
             placeholder="testimonial"
+            rows="7"
+            cols="30"
+            maxlength="100"
           />
           <input
             type="text"
@@ -276,6 +282,9 @@ function EditTestimonialForm() {
             value={formInfo.text2}
             onChange={onChangeHandler}
             placeholder="testimonial"
+            rows="7"
+            cols="30"
+            maxlength="100"
           />
           <input
             type="text"
