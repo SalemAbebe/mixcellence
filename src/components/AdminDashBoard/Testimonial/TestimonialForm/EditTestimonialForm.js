@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // styles
 import "./EditTestimonialForm.scss";
@@ -111,14 +111,14 @@ import "./EditTestimonialForm.scss";
 
 // export default EditTestimonialForm;
 
-//redux
+// redux;
 
 import { useDispatch, useSelector } from "react-redux";
 import {
   addFirebaseHandler,
   getFirebaseDataHandler,
   updateFirebaseHandler,
-} from "../../../../ReduxStore/thunks/About/AboutDatabaseThunks";
+} from "../../../../ReduxStore/thunks/Testimonial/TestimonialDatabaseThunks";
 
 function EditTestimonialForm() {
   const dispatch = useDispatch();
@@ -135,6 +135,8 @@ function EditTestimonialForm() {
     cityAndDate2: "",
   });
   const dataId = useSelector((state) => state.testimonial.dataId);
+  const dataId1 = useSelector((state) => state.testimonial.dataId1);
+  const dataId2 = useSelector((state) => state.testimonial.dataId2);
 
   const submitFormHandler = (e) => {
     e.preventDefault();
@@ -143,7 +145,7 @@ function EditTestimonialForm() {
     //if collection doesn't exist creates one
     //else updates the collection
 
-    if (dataId === null) {
+    if (dataId === null && dataId1 === null && dataId2 === null) {
       dispatch(
         addFirebaseHandler(
           formInfo.heading,
@@ -161,13 +163,16 @@ function EditTestimonialForm() {
     } else {
       dispatch(
         updateFirebaseHandler(
+          dataId,
           formInfo.heading,
           formInfo.name,
           formInfo.text,
           formInfo.cityAndDate,
+          dataId1,
           formInfo.name1,
           formInfo.text1,
           formInfo.cityAndDate1,
+          dataId2,
           formInfo.name2,
           formInfo.text2,
           formInfo.cityAndDate2
@@ -215,13 +220,18 @@ function EditTestimonialForm() {
           <textarea
             type="text"
             id="testimonial"
+            name="text"
             value={formInfo.text}
             onChange={onChangeHandler}
             placeholder="testimonial"
+            rows="7"
+            cols="30"
+            maxlength="100"
           />
           <input
             type="text"
             id="cityAndDate"
+            name="cityAndDate"
             value={formInfo.cityAndDate}
             onChange={onChangeHandler}
             placeholder="city and date"
@@ -231,21 +241,26 @@ function EditTestimonialForm() {
           <input
             type="text"
             id="name"
-            name="name"
+            name="name1"
             value={formInfo.name1}
             onChange={onChangeHandler}
             placeholder="name"
           />
           <textarea
             type="text"
+            name="text1"
             id="testimonial"
             value={formInfo.text1}
             onChange={onChangeHandler}
             placeholder="testimonial"
+            rows="7"
+            cols="30"
+            maxlength="100"
           />
           <input
             type="text"
             id="cityAndDate"
+            name="cityAndDate1"
             value={formInfo.cityAndDate1}
             onChange={onChangeHandler}
             placeholder="city and date"
@@ -255,7 +270,7 @@ function EditTestimonialForm() {
           <input
             type="text"
             id="name"
-            name="name"
+            name="name2"
             value={formInfo.name2}
             onChange={onChangeHandler}
             placeholder="name"
@@ -263,13 +278,18 @@ function EditTestimonialForm() {
           <textarea
             type="text"
             id="testimonial"
+            name="text2"
             value={formInfo.text2}
             onChange={onChangeHandler}
             placeholder="testimonial"
+            rows="7"
+            cols="30"
+            maxlength="100"
           />
           <input
             type="text"
-            id="cityAndDate"
+            id="cityAndDate2"
+            name="cityAndDate2"
             value={formInfo.cityAndDate2}
             onChange={onChangeHandler}
             placeholder="city and date"
