@@ -4,6 +4,10 @@ const heroSlice = createSlice({
   name: "hero",
   initialState: {
     dataId: null,
+    formInfo: {
+      heading: "",
+      subHeading: "",
+    },
     heroInfo: {
       id: null,
       heading: null,
@@ -14,6 +18,12 @@ const heroSlice = createSlice({
     isLoading: false,
   },
   reducers: {
+    handleFormInfo(state, action) {
+      state.formInfo = {
+        heading: action.payload.heading,
+        subHeading: action.payload.subHeading,
+      };
+    },
     handleHeroInfo(state, action) {
       state.dataId = action.payload.id;
       state.heroInfo = {

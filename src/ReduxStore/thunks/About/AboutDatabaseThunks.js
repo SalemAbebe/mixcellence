@@ -1,4 +1,4 @@
-//firebase
+//firestore database
 import { app } from "../../../firebase/config";
 import {
   addDoc,
@@ -14,11 +14,11 @@ import { notificationActions } from "../../slices/NotificationSlice";
 
 export const addFirebaseHandler = (heading, text, url) => {
   return async (dispatch) => {
-    //connect to firebase
-    const firebaseRef = collection(app, "about");
+    //connect to firestore database
+    const collectionRef = collection(app, "about");
 
-    //send heading to new collection
-    await addDoc(firebaseRef, {
+    //create new collection and add doc
+    await addDoc(collectionRef, {
       heading: heading,
       text: text,
       photo: url,
@@ -42,21 +42,23 @@ export const addFirebaseHandler = (heading, text, url) => {
   };
 };
 
-export const getFirebaseDataHandler = (setData) => {
+export const getFirebaseDataHandler = () => {
   return (dispatch) => {
     //connect to firestore database
-    const firestoreRef = collection(app, "about");
+    const collectionRef = collection(app, "about");
 
     //get firebase data snapshot
-    onSnapshot(firestoreRef, (res) => {
+    onSnapshot(collectionRef, (res) => {
       let arr = [];
       res.docs.forEach((doc) => {
         arr.push({ id: doc.id, ...doc.data() });
       });
-      setData({
-        heading: arr[0].heading,
-        text: arr[0].text,
-      });
+      dispatch(
+        aboutActions.handleFormInfo({
+          heading: arr[0].heading,
+          text: arr[0].text,
+        })
+      );
       dispatch(
         aboutActions.handleDatabaseInfo({
           id: arr[0].id,
@@ -71,11 +73,11 @@ export const getFirebaseDataHandler = (setData) => {
 
 export const updateFirebaseHandler = (id, heading, text, url) => {
   return async (dispatch) => {
-    //connect to firebase
-    const firebaseRef = doc(app, "about", id);
+    //connect to firestore database
+    const docRef = doc(app, "about", id);
 
-    //update heading doc
-    await updateDoc(firebaseRef, {
+    //update existing doc
+    await updateDoc(docRef, {
       heading: heading,
       text: text,
       photo: url,

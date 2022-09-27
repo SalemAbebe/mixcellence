@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
+import { aboutActions } from "../../../../ReduxStore/slices/AboutSlice";
 import {
   addFirebaseHandler,
   getFirebaseDataHandler,
@@ -13,12 +14,20 @@ import "./AboutHeadingForm.scss";
 
 function AboutHeadingForm() {
   const dispatch = useDispatch();
-  const [formInfo, setFormInfo] = useState({
-    heading: "",
-    text: "",
-  });
   const dataId = useSelector((state) => state.about.dataId);
+  const formInfo = useSelector((state) => state.about.formInfo);
   const imageURL = useSelector((state) => state.about.imageURL);
+  const heading = useRef();
+  const text = useRef();
+
+  const onChangeHandler = (e) => {
+    dispatch(
+      aboutActions.handleFormInfo({
+        heading: heading.current.value,
+        text: text.current.value,
+      })
+    );
+  };
 
   const submitFormHandler = (e) => {
     e.preventDefault();
@@ -35,24 +44,20 @@ function AboutHeadingForm() {
     }
   };
 
-  const onChangeHandler = (e) => {
-    setFormInfo((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
-    });
-  };
-
   useEffect(() => {
     //gets realtime snapshots of database
-    dispatch(getFirebaseDataHandler(setFormInfo));
+    const unSub = dispatch(getFirebaseDataHandler());
+
+    return () => unSub;
   }, [dispatch]);
 
   return (
-    <form onSubmit={submitFormHandler}>
+    <form id="about-form" onSubmit={submitFormHandler}>
       <div className="about-heading-control">
         <label htmlFor="heading">Heading</label>
         <input
           id="heading"
-          name="heading"
+          ref={heading}
           type="text"
           value={formInfo.heading}
           onChange={onChangeHandler}
@@ -64,12 +69,11 @@ function AboutHeadingForm() {
           id="text"
           cols="30"
           rows="10"
-          name="text"
+          ref={text}
           value={formInfo.text}
           onChange={onChangeHandler}
         ></textarea>
       </div>
-      <button className="about-heading-button">Save</button>
     </form>
   );
 }
