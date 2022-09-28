@@ -3,6 +3,8 @@
 *,
 *::after,
 *::before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11,3 +13,8 @@ body {
   margin: 0;
   padding: 0;
 }
+$primary-color: #fff;
+$secondary-color: #504c9c;
+$tertiary-color: #9794cc;
+$background-color: #e8e5ee;
+$black: #000;

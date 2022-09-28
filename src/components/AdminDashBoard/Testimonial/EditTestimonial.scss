@@ -1,40 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
 .testimonial-section {
   width: 90%;
-  margin: auto;
-  margin-left: auto;
+  // margin: auto;
+  // margin-left: auto;
   margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 
   h1 {
-    font-size: 50px;
+    width: 90%;
+    margin-left: 10%;
+    font-size: 48px;
     text-align: center;
-  }
-  form {
-    width: 80%;
-    margin-left: auto;
-    margin-right: 0;
-    align-content: center;
-    .heading {
-    }
-    input {
-      width: 328px;
-      height: 40px;
-      margin: 5px 0;
-    }
-    textarea {
-      width: 329px;
-      height: 247px;
-    }
-    .testimonial-wrapper {
-      display: flex;
-      align-items: center;
+    font-family: "DM Serif Display", serif;
+    text-align: center;
+    margin-bottom: 60px;
 
-      .testimonial {
-        //
-        textarea {
-          width: 329px;
-          height: 247px;
-        }
-      }
-    }
+    border-bottom: 1px solid #232323;
   }
 }

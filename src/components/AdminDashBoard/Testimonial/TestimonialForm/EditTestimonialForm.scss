@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+$primary-color: #fff;
+$secondary-color: #504c9c;
+$tertiary-color: #9794cc;
+$background-color: #e8e5ee;
+$black: #000;
+$color: #232323;
+
+form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: 0;
+  align-content: center;
+  .heading {
+    font-size: 14px;
+    line-height: 22px;
+    color: $color;
+    align-items: center;
+  }
+  input {
+    width: 328px;
+    height: 40px;
+    margin: 5px 0;
+    border: 1px solid $black;
+    text-align: center;
+
+    // #cityAndDate {
+    //   @extend input;
+    // }
+  }
+  .testimonial-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .testimonial {
+      margin: 20px 0;
+
+      #name {
+        font-size: 24px;
+        line-height: 32px;
+        color: $color;
+        font-family: "DM Serif Display", serif;
+        // font-weight: bold;
+        text-align: center;
+      }
+      #testimonial {
+        font-size: 16px;
+        line-height: 32px;
+        color: $color;
+      }
+      #cityAndDate {
+        @extend input;
+      }
+
+      textarea {
+        // width: 329px;
+        // height: 247px;
+        padding: 30px 20px;
+        border: 1px solid $black;
+      }
+    }
+  }
+
+  .button {
+    // align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 17px;
+    position: absolute;
+    width: 129px;
+    height: 44px;
+    left: 50%;
+    top: 80%;
+
+    button {
+      background-color: $tertiary-color;
+      cursor: pointer;
+      padding: 11px 45px;
+      border: none;
+
+      /* Body Large */
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 28px;
+      color: #ffffff;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+}

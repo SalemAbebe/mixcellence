@@ -32,28 +32,31 @@ function EditFAQ() {
     });
   };
   return (
-    <form onSubmit={addDocsHandler}>
-      <label htmlFor="heading">Question</label>
-      <input
-        type="text"
-        id="heading"
-        name="heading"
-        value={FAQ.heading}
-        onChange={onChangeHandler}
-      />
-      <label htmlFor="text">Answer</label>
-      <textarea
-        type="text"
-        name="text"
-        id="text"
-        cols="30"
-        rows="10"
-        value={FAQ.text}
-        onChange={onChangeHandler}
-      />
+    <div className="editFAQ">
+      <h1>FAQ</h1>
+      <form onSubmit={addDocsHandler}>
+        <label htmlFor="heading">Question</label>
+        <input
+          type="text"
+          id="heading"
+          name="heading"
+          value={FAQ.heading}
+          onChange={onChangeHandler}
+        />
+        <label htmlFor="text">Answer</label>
+        <textarea
+          type="text"
+          name="text"
+          id="text"
+          cols="30"
+          rows="10"
+          value={FAQ.text}
+          onChange={onChangeHandler}
+        />
 
-      <button>Save</button>
-    </form>
+        <button>Save</button>
+      </form>
+    </div>
   );
 }
 
