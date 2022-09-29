@@ -11,7 +11,7 @@ function ServiceTextArea({ onChangeHandler, text }) {
   const formArr = useSelector((state) => state.services.formArr);
 
   return (
-    <div className="services-form-control">
+    <div className="service-form-control">
       <label htmlFor="text">Text</label>
       <textarea
         id="text"
