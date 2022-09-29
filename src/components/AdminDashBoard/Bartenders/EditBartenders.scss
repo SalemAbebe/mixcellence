@@ -5,7 +5,13 @@
   width: 80%;
 
   .edit-bartenders-wrapper {
+    align-items: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+    span {
+      border-top: 1px solid black;
+      width: 60%;
+    }
   }
 }

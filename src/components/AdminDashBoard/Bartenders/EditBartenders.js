@@ -8,6 +8,7 @@ function EditBartenders() {
     <div className="edit-bartenders-container">
       <div className="edit-bartenders-wrapper">
         <h1>Bartenders</h1>
+        <span />
       </div>
     </div>
   );
