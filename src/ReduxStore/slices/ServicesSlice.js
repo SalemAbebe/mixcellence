@@ -6,7 +6,6 @@ const servicesSlice = createSlice({
     componentArrSize: [],
     componentCounter: 0,
     dataId: [],
-    dataSize: [],
     formArr: [],
     imageURL: [],
     isLoading: false,
@@ -17,12 +16,8 @@ const servicesSlice = createSlice({
       text: null,
       photo: null,
     },
-    submitForm: false,
   },
   reducers: {
-    handleDataSize(state, action) {
-      state.dataSize.push(action.payload);
-    },
     handleDecreaseComponentArrSize(state, action) {
       state.componentArrSize.splice(action.payload.index, 1);
     },

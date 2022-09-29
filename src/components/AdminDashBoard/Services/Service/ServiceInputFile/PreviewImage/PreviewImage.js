@@ -33,7 +33,7 @@ function PreviewImage() {
   }, [newImageFile, index, dispatch]);
 
   return (
-    <div className="services-preview-image-container">
+    <div className="service-preview-image-container">
       <input
         type="file"
         id="photo"
@@ -41,7 +41,10 @@ function PreviewImage() {
         style={{ display: "none" }}
         onChange={onChangeHandler}
       />
-      <button className="preview-image-button" onClick={newImageSelectHandler}>
+      <button
+        className="service-preview-image-button"
+        onClick={newImageSelectHandler}
+      >
         <img
           src={imageURL[index]}
           alt="services"

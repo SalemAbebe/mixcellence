@@ -1,5 +1,10 @@
 import React, { useContext, useEffect, useRef } from "react";
 
+//component
+import ServiceHeadingInput from "./ServiceHeadingInput";
+import ServiceSubHeadingInput from "./ServiceSubHeadingInput";
+import ServiceTextArea from "./ServiceTextArea";
+
 //context
 import { IndexContext } from "../Service";
 
@@ -57,37 +62,15 @@ function ServiceForm() {
 
   return (
     <form id={index} onSubmit={onSubmitHandler}>
-      <div className="services-form-control">
-        <label htmlFor="heading">Heading</label>
-        <input
-          id="heading"
-          ref={heading}
-          type="text"
-          value={formArr[index]?.heading || ""}
-          onChange={onChangeHandler}
-        />
-      </div>
-      <div className="services-form-control">
-        <label htmlFor="subHeading">Sub-Heading</label>
-        <input
-          id="subHeading"
-          ref={subHeading}
-          type="text"
-          value={formArr[index]?.subHeading || ""}
-          onChange={onChangeHandler}
-        />
-      </div>
-      <div className="services-form-control">
-        <label htmlFor="text">Text</label>
-        <textarea
-          id="text"
-          cols="30"
-          rows="10"
-          ref={text}
-          value={formArr[index]?.text || ""}
-          onChange={onChangeHandler}
-        />
-      </div>
+      <ServiceHeadingInput
+        heading={heading}
+        onChangeHandler={onChangeHandler}
+      />
+      <ServiceSubHeadingInput
+        onChangeHandler={onChangeHandler}
+        subHeading={subHeading}
+      />
+      <ServiceTextArea onChangeHandler={onChangeHandler} text={text} />
     </form>
   );
 }

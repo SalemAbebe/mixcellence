@@ -1,25 +1,17 @@
 import React from "react";
 
 //components
+import AddServiceButton from "./AddServiceButton";
 import Service from "./Service/Service";
 
 //redux
-import { useDispatch, useSelector } from "react-redux";
-import { servicesActions } from "../../../ReduxStore/slices/ServicesSlice";
+import { useSelector } from "react-redux";
 
 //styles
 import "./EditServices.scss";
 
 function EditServices() {
-  const dispatch = useDispatch();
   const compArrSize = useSelector((state) => state.services.componentArrSize);
-
-  //add Service Component
-  const addComponentHandler = () => {
-    if (compArrSize.length < 4) {
-      dispatch(servicesActions.handleIncreaseComponentArrSize(1));
-    }
-  };
 
   const addComponentMap = compArrSize.map((item, index) => {
     return <Service key={item} index={index} />;
@@ -30,17 +22,8 @@ function EditServices() {
       <div className="edit-services-wrapper">
         <h1>Services</h1>
         <span />
-        <div className="section-container">{addComponentMap}</div>
-        <div className="edit-services-control">
-          <button
-            id="add-section"
-            className="add-section-button"
-            onClick={addComponentHandler}
-          >
-            +
-          </button>
-          <label htmlFor="add-section">Add Section</label>
-        </div>
+        <div className="services-section-container">{addComponentMap}</div>
+        <AddServiceButton />
       </div>
     </div>
   );

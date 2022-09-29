@@ -50,6 +50,7 @@ export const deleteFirebaseHandler = (id) => {
     //connect to firestore database
     const docRef = doc(app, "services", id);
 
+    //delete doc
     await deleteDoc(docRef)
       .then(() => {
         dispatch(
@@ -71,7 +72,7 @@ export const deleteFirebaseHandler = (id) => {
 };
 
 export const getFirebaseDataHandler = (i) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     //connect to firestore database
     const collectionRef = collection(app, "services");
 
