@@ -77,10 +77,12 @@ export const getFirebaseDataHandler = (i) => {
 
     //get firebase data snapshot
     onSnapshot(collectionRef, (res) => {
+      if (res.empty) {
+        return;
+      }
       let arr = [];
       res.docs.forEach((doc) => {
         arr.push({ id: doc.id, ...doc.data() });
-        console.log(arr);
       });
 
       dispatch(
