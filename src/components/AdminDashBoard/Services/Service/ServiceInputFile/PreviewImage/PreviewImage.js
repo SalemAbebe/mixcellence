@@ -7,6 +7,9 @@ import { IndexContext } from "../../Service";
 import { useDispatch, useSelector } from "react-redux";
 import { servicesStorageHandler } from "../../../../../../ReduxStore/thunks/Services/ServicesStorageThunks";
 
+//styles
+import "./PreviewImage.scss";
+
 function PreviewImage() {
   const dispatch = useDispatch();
   const { index } = useContext(IndexContext);
@@ -30,7 +33,7 @@ function PreviewImage() {
   }, [newImageFile, index, dispatch]);
 
   return (
-    <div>
+    <div className="services-preview-image-container">
       <input
         type="file"
         id="photo"
