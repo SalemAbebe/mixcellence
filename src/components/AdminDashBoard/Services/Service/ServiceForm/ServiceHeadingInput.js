@@ -11,7 +11,7 @@ function ServiceHeadingInput({ heading, onChangeHandler }) {
   const formArr = useSelector((state) => state.services.formArr);
 
   return (
-    <div className="services-form-control">
+    <div className="service-form-control">
       <label htmlFor="heading">Heading</label>
       <input
         id="heading"

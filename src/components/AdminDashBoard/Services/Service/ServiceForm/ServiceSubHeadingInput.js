@@ -11,7 +11,7 @@ function ServiceSubHeadingInput({ onChangeHandler, subHeading }) {
   const formArr = useSelector((state) => state.services.formArr);
 
   return (
-    <div className="services-form-control">
+    <div className="service-form-control">
       <label htmlFor="subHeading">Sub-Heading</label>
       <input
         id="subHeading"
