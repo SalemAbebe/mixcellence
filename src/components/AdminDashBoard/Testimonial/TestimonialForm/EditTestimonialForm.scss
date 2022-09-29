@@ -7,10 +7,9 @@ $background-color: #e8e5ee;
 $black: #000;
 $color: #232323;
 
-form {
+.edit-testimonial-form {
   width: 80%;
-  margin-left: auto;
-  margin-right: 0;
+  margin: auto;
   align-content: center;
   .heading {
     font-size: 14px;
@@ -19,7 +18,7 @@ form {
     align-items: center;
   }
   input {
-    width: 328px;
+    width: 329px;
     height: 40px;
     margin: 5px 0;
     border: 1px solid $black;
@@ -30,12 +29,17 @@ form {
     // }
   }
   .testimonial-wrapper {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     .testimonial {
       margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
 
       #name {
         font-size: 24px;
@@ -47,16 +51,17 @@ form {
       }
       #testimonial {
         font-size: 16px;
-        line-height: 32px;
+        line-height: 24px;
         color: $color;
+        font-family: "Poppins", sans-serif;
       }
       #cityAndDate {
         @extend input;
       }
 
       textarea {
-        // width: 329px;
-        // height: 247px;
+        width: 329px;
+        height: 247px;
         padding: 30px 20px;
         border: 1px solid $black;
       }
