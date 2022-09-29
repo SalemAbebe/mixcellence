@@ -52,7 +52,7 @@ function AboutHeadingForm() {
   }, [dispatch]);
 
   return (
-    <form id="about-form" onSubmit={submitFormHandler}>
+    <form id="about-form" className="about-form" onSubmit={submitFormHandler}>
       <div className="about-heading-control">
         <label htmlFor="heading">Heading</label>
         <input

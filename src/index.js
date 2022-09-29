@@ -10,6 +10,9 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import RoutesPath from "./Routes/Routes";
 
+//styles
+import "./index.scss";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
