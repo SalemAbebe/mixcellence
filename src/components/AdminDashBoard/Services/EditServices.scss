@@ -17,7 +17,7 @@
       display: flex;
       flex-direction: column;
 
-      .add-section-button {
+      .add-service-section-button {
         background-color: #42c960;
         border: none;
         border-radius: 50%;
@@ -30,7 +30,7 @@
       }
     }
 
-    .section-container {
+    .services-section-container {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;

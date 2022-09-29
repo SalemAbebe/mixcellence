@@ -1,19 +1,19 @@
-.input-file-container {
+.service-input-file-container {
   align-items: center;
   border: 3px dashed black;
   display: flex;
   height: 345px;
   justify-content: center;
-  margin-top: 0.5em;
+  margin-top: 2em;
   margin-right: 1em;
   width: 308px;
 
-  .input-file-control {
+  .service-input-file-control {
     align-items: center;
     display: flex;
     flex-direction: column;
 
-    .input-file-button {
+    .service-input-file-button {
       border: none;
       border-radius: 50%;
       height: 60px;

@@ -34,15 +34,18 @@ function InputFile() {
   }, [imageFile, index, dispatch]);
 
   return (
-    <div className="input-file-container">
-      <div className="input-file-control">
-        <button className="input-file-button" onClick={imageSelectHandler}>
+    <div className="service-input-file-container">
+      <div className="service-input-file-control">
+        <button
+          className="service-input-file-button"
+          id="photo"
+          onClick={imageSelectHandler}
+        >
           +
         </button>
         <label htmlFor="photo">Add Photo</label>
         <input
           type="file"
-          id="input-file-input"
           ref={file}
           style={{ display: "none" }}
           onChange={onChangeHandler}
