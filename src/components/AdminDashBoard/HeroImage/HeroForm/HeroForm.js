@@ -59,7 +59,7 @@ function HeroForm() {
   }, [dispatch]);
 
   return (
-    <form onSubmit={submitFormHandler}>
+    <form className="hero-form" onSubmit={submitFormHandler}>
       <div className="hero-form-control">
         <label htmlFor="heading">Heading</label>
         <input

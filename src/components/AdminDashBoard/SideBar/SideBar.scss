@@ -1,9 +1,12 @@
 .admin-header {
   background-color: #e8e5ee;
-  padding: 20px;
+  padding: 20px 0;
   font-size: larger;
   letter-spacing: 2px;
   text-align: center;
+  position: relative;
+  right: -10%;
+  width: 90%;
 }
 .sidebar {
   position: absolute;
