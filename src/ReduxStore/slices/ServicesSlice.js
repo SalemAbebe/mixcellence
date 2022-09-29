@@ -8,7 +8,6 @@ const servicesSlice = createSlice({
     dataId: [],
     dataSize: [],
     formArr: [],
-    formSent: false,
     imageURL: [],
     isLoading: false,
     servicesInfo: {
@@ -18,6 +17,7 @@ const servicesSlice = createSlice({
       text: null,
       photo: null,
     },
+    submitForm: false,
   },
   reducers: {
     handleDataSize(state, action) {
@@ -49,9 +49,6 @@ const servicesSlice = createSlice({
         });
       }
     },
-    handleFormSent(state, action) {
-      state.formSent = action.payload;
-    },
     handleImageURL(state, action) {
       if (state.imageURL[action.payload.index] === undefined) {
         state.imageURL.push(action.payload.photo);
@@ -75,20 +72,6 @@ const servicesSlice = createSlice({
         text: action.payload.text,
         photo: action.payload.photo,
       };
-    },
-    handleUpdateComponentArrSize(state, action) {
-      if (state.componentArrSize.length === 1) {
-        state.componentArrSize.splice(
-          action.payload.index,
-          1,
-          action.payload.length
-        );
-      } else {
-        state.componentArrSize.push([
-          ...state.componentArrSize,
-          action.payload.length,
-        ]);
-      }
     },
   },
 });

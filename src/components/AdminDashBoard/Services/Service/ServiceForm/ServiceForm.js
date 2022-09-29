@@ -63,7 +63,7 @@ function ServiceForm() {
           id="heading"
           ref={heading}
           type="text"
-          value={formArr[index]?.heading}
+          value={formArr[index]?.heading || ""}
           onChange={onChangeHandler}
         />
       </div>
@@ -73,7 +73,7 @@ function ServiceForm() {
           id="subHeading"
           ref={subHeading}
           type="text"
-          value={formArr[index]?.subHeading}
+          value={formArr[index]?.subHeading || ""}
           onChange={onChangeHandler}
         />
       </div>
@@ -84,7 +84,7 @@ function ServiceForm() {
           cols="30"
           rows="10"
           ref={text}
-          value={formArr[index]?.text}
+          value={formArr[index]?.text || ""}
           onChange={onChangeHandler}
         />
       </div>

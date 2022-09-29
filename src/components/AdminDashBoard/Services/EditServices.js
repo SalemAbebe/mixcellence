@@ -13,7 +13,6 @@ import "./EditServices.scss";
 function EditServices() {
   const dispatch = useDispatch();
   const compArrSize = useSelector((state) => state.services.componentArrSize);
-  console.log(compArrSize);
 
   //add Service Component
   const addComponentHandler = () => {

@@ -18,7 +18,6 @@ export const IndexContext = createContext({});
 function Service({ index }) {
   const dispatch = useDispatch();
   const dataId = useSelector((state) => state.services.dataId);
-  console.log(dataId);
 
   const deleteComponentHandler = () => {
     dispatch(servicesActions.handleDecreaseComponentArrSize(index));
@@ -26,7 +25,6 @@ function Service({ index }) {
     dispatch(deleteStorageHandler(index));
     dispatch(servicesActions.handleDeleteImageURL(index));
     dispatch(servicesActions.handleDeleteDataId(index));
-    console.log(index);
   };
 
   return (
