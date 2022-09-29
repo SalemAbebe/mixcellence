@@ -27,16 +27,20 @@ function EditServices() {
 
   return (
     <div className="edit-services-container">
-      <div className="section-container">{addComponentMap}</div>
-      <div className="edit-services-control">
-        <button
-          id="add-section"
-          className="add-section-button"
-          onClick={addComponentHandler}
-        >
-          +
-        </button>
-        <label htmlFor="add-section">Add Section</label>
+      <div className="edit-services-wrapper">
+        <h1>Services</h1>
+        <span />
+        <div className="section-container">{addComponentMap}</div>
+        <div className="edit-services-control">
+          <button
+            id="add-section"
+            className="add-section-button"
+            onClick={addComponentHandler}
+          >
+            +
+          </button>
+          <label htmlFor="add-section">Add Section</label>
+        </div>
       </div>
     </div>
   );

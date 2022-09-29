@@ -1,0 +1,11 @@
+.edit-bartenders-container {
+  border-color: red;
+  position: relative;
+  right: -20%;
+  width: 80%;
+
+  .edit-bartenders-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+
+//styles
+import "./EditBartenders.scss";
 
 function EditBartenders() {
   return (
-    <div>EditBartenders</div>
-  )
+    <div className="edit-bartenders-container">
+      <div className="edit-bartenders-wrapper">
+        <h1>Bartenders</h1>
+      </div>
+    </div>
+  );
 }
 
-export default EditBartenders
+export default EditBartenders;
