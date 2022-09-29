@@ -10,7 +10,6 @@ import homeIcon from "../../../Assets/images/home-icon.png";
 function SideBar() {
   return (
     <div className="section-wrapper">
-      <div className="admin-header">MIXCELLENCE</div>
       <div className="sidebar">
         <Welcome />
         <button>

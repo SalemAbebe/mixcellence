@@ -111,6 +111,8 @@ export const getFirebaseDataHandler = (setData) => {
       res.docs.forEach((doc) => {
         arr.push({ id: doc.id, ...doc.data() });
       });
+
+      // sort data based on order number ascending order
       arr.sort((a, b) => {
         return a.order - b.order;
       });
@@ -138,7 +140,7 @@ export const getFirebaseDataHandler = (setData) => {
           id1: arr[1].id,
           name1: arr[1].name,
           text1: arr[1].text,
-          cityAndDate2: arr[1].cityAndDate,
+          cityAndDate1: arr[1].cityAndDate,
           id2: arr[2].id,
           name2: arr[2].name,
           text2: arr[2].text,
