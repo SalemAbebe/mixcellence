@@ -61,7 +61,7 @@ function ServiceForm() {
   }, [dispatch, index]);
 
   return (
-    <form id={index} onSubmit={onSubmitHandler}>
+    <form className="service-form" id={index} onSubmit={onSubmitHandler}>
       <ServiceHeadingInput
         heading={heading}
         onChangeHandler={onChangeHandler}
