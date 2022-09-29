@@ -1,0 +1,47 @@
+.bartender-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  width: 40%;
+
+  .bartender-button-wrapper {
+    align-items: center;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+
+    .bartender-delete-section-control {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      .bartender-delete-section-button {
+        background-color: #f36a43;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 8px 44px;
+      }
+    }
+    .bartender-form-button-control {
+      align-items: center;
+      display: flex;
+
+      .bartender-form-button {
+        background-color: #9794cc;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 8px 44px;
+      }
+    }
+  }
+
+  .bartender-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}

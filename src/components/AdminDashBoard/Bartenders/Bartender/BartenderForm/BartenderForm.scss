@@ -1,0 +1,33 @@
+.bartender-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .bartender-form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 0.1em 0;
+
+    input {
+      height: 40px;
+      padding: 12px;
+      width: 307px;
+    }
+
+    .label-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .social-media-checkbox {
+        align-self: flex-end;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    textarea {
+      padding: 12px;
+      width: 307px;
+    }
+  }
+}
