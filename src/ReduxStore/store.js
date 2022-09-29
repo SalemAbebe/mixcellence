@@ -6,6 +6,7 @@ import heroReducer from "./slices/HeroSlice";
 import servicesReducer from "./slices/ServicesSlice";
 import testimonialReducer from "./slices/TestimonialSlice";
 import notificationReducer from "./slices/NotificationSlice";
+import FAQReducer from "./slices/FAQSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     services: servicesReducer,
     testimonial: testimonialReducer,
     notification: notificationReducer,
+    FAQ: FAQReducer,
   },
 });
 
