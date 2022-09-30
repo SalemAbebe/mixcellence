@@ -11,33 +11,16 @@ import {
 import { notificationActions } from "../../slices/NotificationSlice";
 import { bartendersActions } from "../../slices/BartendersSlice";
 
-export const deleteStorageHandler = (index) => {
-  return async (dispatch) => {
-    //connect to storage
-    const storage = getStorage();
-    const deleteRef = ref(storage, `images/services/${index}/services.png`);
-
-    //delete file
-    await deleteObject(deleteRef)
-      .then(() => {})
-      .catch(() => {
-        dispatch(
-          notificationActions.handleError({
-            isError: true,
-            message: "Error deleting file!",
-          })
-        );
-      });
-  };
-};
-
-export const servicesStorageHandler = (data, index) => {
+export const bartendersStorageHandler = (data, index) => {
   return async (dispatch) => {
     dispatch(bartendersActions.handleIsLoading(true));
 
     //connect to storage
     const storage = getStorage();
-    const storageRef = ref(storage, `images/services/${index}/services.png`);
+    const storageRef = ref(
+      storage,
+      `images/bartenders/${index}/bartenders.png`
+    );
 
     //save file to storage
     await uploadBytes(storageRef, data)
@@ -69,5 +52,25 @@ export const servicesStorageHandler = (data, index) => {
     });
 
     dispatch(bartendersActions.handleIsLoading(false));
+  };
+};
+
+export const deleteStorageHandler = (index) => {
+  return async (dispatch) => {
+    //connect to storage
+    const storage = getStorage();
+    const deleteRef = ref(storage, `images/bartenders/${index}/bartenders.png`);
+
+    //delete file
+    await deleteObject(deleteRef)
+      .then(() => {})
+      .catch(() => {
+        dispatch(
+          notificationActions.handleError({
+            isError: true,
+            message: "Error deleting file!",
+          })
+        );
+      });
   };
 };

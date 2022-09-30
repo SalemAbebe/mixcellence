@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 //context
 import { IndexContext } from "./Service";
@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { servicesActions } from "../../../../ReduxStore/slices/ServicesSlice";
 import { deleteFirebaseHandler } from "../../../../ReduxStore/thunks/Services/ServicesDatabaseThunks";
 import { deleteStorageHandler } from "../../../../ReduxStore/thunks/Services/ServicesStorageThunks";
-import { useContext } from "react";
 
 function ServiceDeleteButton() {
   const dispatch = useDispatch();
@@ -16,11 +15,9 @@ function ServiceDeleteButton() {
   const dataId = useSelector((state) => state.services.dataId);
 
   const deleteComponentHandler = () => {
-    dispatch(servicesActions.handleDecreaseComponentArrSize(index));
     dispatch(deleteFirebaseHandler(dataId[index]));
     dispatch(deleteStorageHandler(index));
-    dispatch(servicesActions.handleDeleteImageURL(index));
-    dispatch(servicesActions.handleDeleteDataId(index));
+    dispatch(servicesActions.handleDeleteService(index));
   };
   return (
     <div className="service-delete-section-control">

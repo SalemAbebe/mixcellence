@@ -29,13 +29,10 @@ const bartendersSlice = createSlice({
     },
   },
   reducers: {
-    handleDecreaseComponentArrSize(state, action) {
-      state.componentArrSize.splice(action.payload.index, 1);
-    },
-    handleDeleteDataId(state, action) {
+    handleDeleteBartender(state, action) {
+      state.componentArrSize.splice(action.payload, 1);
       state.dataId.splice(action.payload, 1);
-    },
-    handleDeleteImageURL(state, action) {
+      state.formArr.splice(action.payload, 1);
       state.imageURL.splice(action.payload, 1);
     },
     handleFormArr(state, action) {
@@ -75,9 +72,9 @@ const bartendersSlice = createSlice({
     handleIsLoading(state, action) {
       state.isLoading = action.payload;
     },
-    handleServicesInfo(state, action) {
+    handleBartendersInfo(state, action) {
       state.dataId.splice(action.payload.index, 1, action.payload.id);
-      state.servicesInfo = {
+      state.bartendersInfo = {
         id: action.payload.id,
         heading: action.payload.heading,
         subHeading: action.payload.subHeading,

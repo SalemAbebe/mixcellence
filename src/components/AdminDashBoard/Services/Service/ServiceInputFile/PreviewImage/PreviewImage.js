@@ -18,7 +18,6 @@ function PreviewImage() {
   const file = useRef();
 
   const newImageSelectHandler = (e) => {
-    e.preventDefault();
     file.current.click();
   };
 

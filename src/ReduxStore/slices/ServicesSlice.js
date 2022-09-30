@@ -18,13 +18,10 @@ const servicesSlice = createSlice({
     },
   },
   reducers: {
-    handleDecreaseComponentArrSize(state, action) {
+    handleDeleteService(state, action) {
       state.componentArrSize.splice(action.payload.index, 1);
-    },
-    handleDeleteDataId(state, action) {
       state.dataId.splice(action.payload, 1);
-    },
-    handleDeleteImageURL(state, action) {
+      state.formArr.splice(action.payload, 1);
       state.imageURL.splice(action.payload, 1);
     },
     handleFormArr(state, action) {

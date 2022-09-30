@@ -77,7 +77,7 @@ export const deleteFirebaseHandler = (id) => {
 export const getFirebaseDataHandler = (i) => {
   return (dispatch) => {
     //connect to firestore database
-    const collectionRef = collection(app, "services");
+    const collectionRef = collection(app, "bartenders");
 
     //get firebase data snapshot
     onSnapshot(collectionRef, (res) => {
@@ -90,15 +90,26 @@ export const getFirebaseDataHandler = (i) => {
         arr.push({ id: doc.id, ...doc.data() });
       });
 
+      console.log(arr);
+
       dispatch(
         bartendersActions.handleFormArr({
           index: i,
           heading: arr[i].heading,
           subHeading: arr[i].subHeading,
           text: arr[i].text,
-          instagram: arr[i].instagram,
-          twitter: arr[i].twitter,
-          facebook: arr[i].facebook,
+          instagram: {
+            link: arr[i].instagram.link,
+            selected: arr[i].instagram.selected,
+          },
+          twitter: {
+            link: arr[i].twitter.link,
+            selected: arr[i].twitter.selected,
+          },
+          facebook: {
+            link: arr[i].facebook.link,
+            selected: arr[i].facebook.selected,
+          },
           photo: arr[i].photo,
         })
       );
@@ -111,7 +122,7 @@ export const getFirebaseDataHandler = (i) => {
       );
 
       dispatch(
-        bartendersActions.handleServicesInfo({
+        bartendersActions.handleBartendersInfo({
           id: arr[i].id,
           index: arr[i].index,
           heading: arr[i].heading,
