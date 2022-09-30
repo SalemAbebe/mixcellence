@@ -1,3 +1,4 @@
+// firebase
 import { app } from "../../../firebase/config";
 import {
   addDoc,
