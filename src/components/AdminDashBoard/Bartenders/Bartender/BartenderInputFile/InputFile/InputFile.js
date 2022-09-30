@@ -1,15 +1,14 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 //context
 import { IndexContext } from "../../Bartender";
 
 //redux
 import { useDispatch } from "react-redux";
-import { servicesStorageHandler } from "../../../../../../ReduxStore/thunks/Bartenders/BartendersStorageThunks";
+import { bartendersStorageHandler } from "../../../../../../ReduxStore/thunks/Bartenders/BartendersStorageThunks";
 
 //styles
 import "./InputFile.scss";
-import { useEffect } from "react";
 
 function InputFile() {
   const dispatch = useDispatch();
@@ -18,21 +17,39 @@ function InputFile() {
   const file = useRef();
 
   //allows button to listen to input
-  const imageSelectHandler = (e) => {};
+  const imageSelectHandler = (e) => {
+    file.current.click();
+  };
 
   //listen to changes in the input
-  const onChangeHandler = (e) => {};
+  const onChangeHandler = (e) => {
+    setImageFile(e.target.files[0]);
+  };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (imageFile !== null) {
+      dispatch(bartendersStorageHandler(imageFile, index));
+    }
+    setImageFile(null);
+  }, [imageFile, index, dispatch]);
 
   return (
     <div className="bartender-input-file-container">
       <div className="bartender-input-file-control">
-        <button className="bartender-input-file-button" id="photo">
+        <button
+          className="bartender-input-file-button"
+          id="photo"
+          onClick={imageSelectHandler}
+        >
           +
         </button>
         <label htmlFor="photo">Add Photo</label>
-        <input type="file" ref={file} style={{ display: "none" }} />
+        <input
+          type="file"
+          ref={file}
+          style={{ display: "none" }}
+          onChange={onChangeHandler}
+        />
       </div>
     </div>
   );

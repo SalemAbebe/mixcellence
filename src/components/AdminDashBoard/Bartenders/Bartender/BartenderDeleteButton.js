@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+
+//context
+import { IndexContext } from "./Bartender";
+
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { bartendersActions } from "../../../../ReduxStore/slices/BartendersSlice";
+import { deleteFirebaseHandler } from "../../../../ReduxStore/thunks/Bartenders/BartendersDatabaseThunks";
+import { deleteStorageHandler } from "../../../../ReduxStore/thunks/Bartenders/BartendersStorageThunks";
 
 function BartenderDeleteButton() {
-  const deleteComponentHandler = () => {};
+  const dispatch = useDispatch();
+  const { index } = useContext(IndexContext);
+  const dataId = useSelector((state) => state.bartenders.dataId);
+
+  const deleteComponentHandler = () => {
+    dispatch(deleteFirebaseHandler(dataId[index]));
+    dispatch(deleteStorageHandler(index));
+    dispatch(bartendersActions.handleDeleteBartender(index));
+  };
 
   return (
     <div className="bartender-delete-section-control">
