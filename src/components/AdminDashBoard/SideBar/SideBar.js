@@ -13,9 +13,9 @@ function SideBar() {
       <div className="admin-header">MIXCELLENCE</div>
       <div className="sidebar">
         <Welcome />
-        <button>
+        <button className="btn-icon">
           <NavLink to={"/"}>
-            <img src={homeIcon} alt="home-icon" />
+            <img className="home-icon" src={homeIcon} alt="home-icon" />
           </NavLink>
         </button>
         <ul>
