@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
+//firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAQbHgd7f-sjTr7ociEfpeHip6xd-dA9gc",
   authDomain: "mixcellence.firebaseapp.com",
@@ -11,8 +13,13 @@ const firebaseConfig = {
   measurementId: "G-YZ0B1E5PNC",
 };
 
+// initialize firebase
 initializeApp(firebaseConfig);
 
+//initialize firestore
 const app = getFirestore();
 
-export { app };
+//initialize authentication
+const auth = getAuth();
+
+export { app, auth };
