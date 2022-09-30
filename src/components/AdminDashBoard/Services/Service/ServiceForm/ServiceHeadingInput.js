@@ -15,6 +15,7 @@ function ServiceHeadingInput({ heading, onChangeHandler }) {
       <label htmlFor="heading">Heading</label>
       <input
         id="heading"
+        placeholder="Enter heading..."
         ref={heading}
         type="text"
         value={formArr[index]?.heading || ""}

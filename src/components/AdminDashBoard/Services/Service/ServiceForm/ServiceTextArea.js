@@ -16,6 +16,7 @@ function ServiceTextArea({ onChangeHandler, text }) {
       <textarea
         id="text"
         cols="30"
+        placeholder="Enter text about the service..."
         rows="10"
         ref={text}
         value={formArr[index]?.text || ""}

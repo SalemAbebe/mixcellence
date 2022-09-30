@@ -16,6 +16,7 @@ function BartenderTextArea({ onChangeHandler, text }) {
       <textarea
         id="text"
         cols="30"
+        placeholder="Enter text about bartender..."
         rows="10"
         ref={text}
         value={formArr[index]?.text || ""}

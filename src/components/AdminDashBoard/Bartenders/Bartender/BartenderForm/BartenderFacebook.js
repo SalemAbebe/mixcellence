@@ -13,18 +13,22 @@ function BartenderFacebook({ facebook, facebookSelected, onChangeHandler }) {
   return (
     <div className="bartender-form-control">
       <div className="label-wrapper">
-        <label htmlFor="facebook">Facebook</label>
-        <input
-          className="social-media-checkbox"
-          ref={facebookSelected}
-          type="checkbox"
-          checked={formArr[index]?.facebook.selected || false}
-          onChange={onChangeHandler}
-        />
+        <label htmlFor="facebook">Check to display Facebook</label>
+        <div>
+          <input
+            id="facebook-checkbox"
+            className="social-media-checkbox"
+            ref={facebookSelected}
+            type="checkbox"
+            checked={formArr[index]?.facebook.selected || false}
+            onChange={onChangeHandler}
+          />
+        </div>
       </div>
       <input
-        type="text"
         id="facebook"
+        placeholder="Paste bartender facebook link here..."
+        type="text"
         ref={facebook}
         value={formArr[index]?.facebook.link || ""}
         onChange={onChangeHandler}

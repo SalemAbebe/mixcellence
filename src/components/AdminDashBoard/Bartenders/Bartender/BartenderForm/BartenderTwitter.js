@@ -13,7 +13,7 @@ function BartenderTwitter({ onChangeHandler, twitter, twitterSelected }) {
   return (
     <div className="bartender-form-control">
       <div className="label-wrapper">
-        <label htmlFor="facebook">Twitter</label>
+        <label htmlFor="facebook">Check to display Twitter</label>
         <input
           className="social-media-checkbox"
           ref={twitterSelected}
@@ -23,9 +23,10 @@ function BartenderTwitter({ onChangeHandler, twitter, twitterSelected }) {
         />
       </div>
       <input
-        type="text"
         id="facebook"
+        placeholder="Paste bartender Twitter link here..."
         ref={twitter}
+        type="text"
         value={formArr[index]?.twitter.link || ""}
         onChange={onChangeHandler}
       />

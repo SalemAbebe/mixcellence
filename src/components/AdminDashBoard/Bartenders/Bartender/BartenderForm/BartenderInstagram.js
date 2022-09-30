@@ -13,7 +13,7 @@ function BartenderInstagram({ instagram, instagramSelected, onChangeHandler }) {
   return (
     <div className="bartender-form-control">
       <div className="label-wrapper">
-        <label htmlFor="instagram">Instagram</label>
+        <label htmlFor="instagram">Check to display Instagram</label>
         <input
           className="social-media-checkbox"
           ref={instagramSelected}
@@ -23,9 +23,10 @@ function BartenderInstagram({ instagram, instagramSelected, onChangeHandler }) {
         />
       </div>
       <input
-        type="text"
         id="instagram"
+        placeholder="Paste bartender instagram link here..."
         ref={instagram}
+        type="text"
         value={formArr[index]?.instagram.link || ""}
         onChange={onChangeHandler}
       />

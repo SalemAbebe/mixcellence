@@ -15,6 +15,7 @@ function BartenderSubHeading({ onChangeHandler, subHeading }) {
       <label htmlFor="subHeading">Sub-Heading</label>
       <input
         id="subHeading"
+        placeholder="Enter sub-heading here..."
         ref={subHeading}
         type="text"
         value={formArr[index]?.subHeading || ""}
