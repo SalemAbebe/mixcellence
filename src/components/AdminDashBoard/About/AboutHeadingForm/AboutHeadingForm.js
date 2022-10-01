@@ -57,6 +57,7 @@ function AboutHeadingForm() {
         <label htmlFor="heading">Heading</label>
         <input
           id="heading"
+          placeholder="Enter heading..."
           ref={heading}
           type="text"
           value={formInfo.heading}
@@ -68,6 +69,7 @@ function AboutHeadingForm() {
         <textarea
           id="text"
           cols="30"
+          placeholder="Enter text about you..."
           rows="10"
           ref={text}
           value={formInfo.text}

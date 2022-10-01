@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 //components
 import AdminDashBoard from "../pages/AdminDashBoard/AdminDashBoard";
+import AdminLogin from "../pages/AdminLogin/AdminLogin";
 import App from "../App";
 import EditAbout from "../components/AdminDashBoard/About/EditAbout";
 import EditBartenders from "../components/AdminDashBoard/Bartenders/EditBartenders";
@@ -13,7 +14,7 @@ import EditHero from "../components/AdminDashBoard/HeroImage/EditHero";
 import EditServices from "../components/AdminDashBoard/Services/EditServices";
 import EditTestimonial from "../components/AdminDashBoard/Testimonial/EditTestimonial";
 import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
+import Login from "../components/AdminLogin/Login/Login";
 
 function RoutesPath() {
   return (
@@ -31,7 +32,9 @@ function RoutesPath() {
           <Route element={<EditFAQ />} path="edit-FAQ" />
           <Route element={<EditContact />} path="edit-contact" />
         </Route>
-        <Route element={<Login />} path="/login" />
+        <Route element={<AdminLogin />} exact path="/login">
+          <Route index element={<Login />} />
+        </Route>
       </Route>
     </Routes>
   );

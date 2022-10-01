@@ -1,0 +1,31 @@
+@import "../../../App.scss";
+
+.login-container {
+  background-color: $primary-color;
+  display: flex;
+
+  .login-home-button-control {
+    display: flex;
+    height: 29px;
+    justify-content: center;
+    position: relative;
+    top: 25%;
+    width: 100%;
+
+    .login-home-button {
+      background-color: $tertiary-color;
+      border: none;
+      color: $primary-color;
+      cursor: pointer;
+      font-size: 9px;
+      padding: 8px 64px;
+      text-decoration: none;
+    }
+  }
+
+  .login-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
