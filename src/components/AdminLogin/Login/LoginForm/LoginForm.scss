@@ -1,0 +1,47 @@
+@import "../../../../App.scss";
+
+.login-form-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+
+  .login-form {
+    margin: 0;
+
+    .login-form-control {
+      display: flex;
+      flex-direction: column;
+
+      .login-input {
+        height: 30px;
+        width: 279px;
+      }
+    }
+
+    .login-button-control {
+      display: flex;
+      flex-direction: column;
+      height: 30px;
+      width: 279px;
+
+      .forgot-password {
+        align-self: flex-end;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 9px;
+        margin: 0;
+        width: fit-content;
+      }
+
+      .login-button {
+        background-color: $tertiary-color;
+        border: none;
+        color: $primary-color;
+        margin: 0.5em 0;
+        padding: 8px 0px;
+      }
+    }
+  }
+}

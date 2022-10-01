@@ -15,7 +15,6 @@ import EditServices from "../components/AdminDashBoard/Services/EditServices";
 import EditTestimonial from "../components/AdminDashBoard/Testimonial/EditTestimonial";
 import Home from "../pages/Home/Home";
 import Login from "../components/AdminLogin/Login/Login";
-import SignUp from "../components/AdminLogin/SignUp/SignUp";
 
 function RoutesPath() {
   return (
@@ -35,7 +34,6 @@ function RoutesPath() {
         </Route>
         <Route element={<AdminLogin />} exact path="/login">
           <Route index element={<Login />} />
-          <Route element={<SignUp />} path="signup" />
         </Route>
       </Route>
     </Routes>
