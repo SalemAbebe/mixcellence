@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .edit-hero-container {
   position: relative;
   right: -10%;
@@ -10,9 +12,9 @@
     width: 100%;
 
     .hero-form-button {
-      background-color: #9794cc;
+      background-color: $secondary-color;
       border: none;
-      color: white;
+      color: $primary-color;
       cursor: pointer;
       font-size: 16px;
       font-weight: 700;
@@ -21,7 +23,7 @@
     }
 
     span {
-      border-top: 1px solid black;
+      border-top: 1px solid $black;
       width: 60%;
     }
   }

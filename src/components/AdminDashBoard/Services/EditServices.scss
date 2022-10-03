@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .edit-services-container {
   align-items: center;
   display: flex;
@@ -18,10 +20,10 @@
       flex-direction: column;
 
       .add-service-section-button {
-        background-color: #42c960;
+        background-color: $icon-green;
         border: none;
         border-radius: 50%;
-        color: black;
+        color: $black;
         cursor: pointer;
         height: 60px;
         font-size: 40px;
@@ -38,7 +40,7 @@
     }
 
     span {
-      border-top: 1px solid black;
+      border-top: 1px solid $black;
       width: 60%;
     }
   }
