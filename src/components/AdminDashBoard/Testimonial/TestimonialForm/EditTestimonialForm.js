@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 // styles
 import "./EditTestimonialForm.scss";
@@ -194,7 +194,7 @@ function EditTestimonialForm() {
   }, [dispatch]);
 
   return (
-    <form onSubmit={submitFormHandler}>
+    <form className="edit-testimonial-form" onSubmit={submitFormHandler}>
       <div className="heading">
         <label htmlFor="heading"> Heading</label>
         <br />

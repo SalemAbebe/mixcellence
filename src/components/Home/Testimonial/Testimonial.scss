@@ -6,12 +6,12 @@ $black: #000;
 
 .testimonials-home {
   background-color: $background-color;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   padding: 15px 0 50px 0;
   .testimonials-home-title {
     text-align: center;
-    padding: 15px;
+    padding: 25px 0 50px;
   }
   .testimonials-home-wrapper {
     width: 90%;
@@ -19,11 +19,11 @@ $black: #000;
     display: flex;
     justify-content: space-between;
 
-    .testimonials-home {
+    .testimonial-home {
       width: 30%;
-      height: 60vh;
+      height: 50vh;
       background-color: $primary-color;
-      padding: 35px;
+      padding: 45px;
       align-items: center;
       box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
       -webkit-box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
