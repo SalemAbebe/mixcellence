@@ -1,0 +1,18 @@
+$primary-color: #fff;
+$secondary-color: #504c9c;
+$tertiary-color: #9794cc;
+$background-color: #e8e5ee;
+$black: #000;
+
+.FAQ-home {
+  .FAQ-home-title {
+    background-color: $background-color;
+    height: 85vh;
+    width: 100vw;
+    padding: 15px 0 50px 0;
+    .FAQ-home-title {
+      text-align: center;
+      padding: 25px 0 50px;
+    }
+  }
+}
