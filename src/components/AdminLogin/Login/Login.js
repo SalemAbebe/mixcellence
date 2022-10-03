@@ -5,10 +5,15 @@ import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import LoginForm from "./LoginForm/LoginForm";
 import LoginHomePageButton from "./LoginHomePageButton";
 
+//redux
+import { useSelector } from "react-redux";
+
 //styles
 import "./Login.scss";
 
 function Login() {
+  const forgotPassword = useSelector((state) => state.login.forgotPassword);
+
   return (
     <div className="login-container">
       <img
@@ -17,7 +22,7 @@ function Login() {
       />
       <div className="login-wrapper">
         <h1>MIXELLENCE</h1>
-        {true ? <LoginForm /> : <ForgotPassword />}
+        {forgotPassword ? <LoginForm /> : <ForgotPassword />}
         <LoginHomePageButton />
       </div>
     </div>
