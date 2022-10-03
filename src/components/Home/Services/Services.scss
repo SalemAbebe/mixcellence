@@ -5,7 +5,12 @@
   flex-direction: column;
   padding: 2em 0;
 
-  .service-container {
+  .service-title {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .services-wrapper {
     display: flex;
     flex-direction: row;
     gap: 2em;
@@ -15,36 +20,42 @@
     .service-wrapper {
       display: flex;
 
-      .info-wrapper {
+      .service-info-wrapper {
         height: 266px;
         padding: 0.5em;
         width: 316px;
 
+        hr {
+          margin: 0;
+        }
+
+        .service-heading {
+          font-size: 32px;
+          margin: 0;
+        }
+
         .service-sub-heading {
+          font-size: 14px;
           margin-top: 0;
         }
 
         .service-text {
+          font-size: 16px;
           margin-top: 3em;
         }
       }
 
       .service-img {
         height: 350px;
+        transition: width 500ms ease-out;
         width: 205px;
-        transition: width 500ms;
 
         &.active {
           height: 350px;
+          transition: width 500ms ease-out;
           width: 316px;
-          transition: width 500ms;
         }
       }
     }
-  }
-
-  .service-title {
-    font-size: 48px;
-    text-align: center;
   }
 }
