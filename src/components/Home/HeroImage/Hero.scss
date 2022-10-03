@@ -1,0 +1,59 @@
+@import "../../../App.scss";
+
+.hero-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  .hero-img-wrapper {
+    background-color: $black;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+    .hero-img {
+      height: 100%;
+      opacity: 0.5;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .hero-wrapper {
+    align-items: center;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+
+    .hero-book-us-button-wrapper {
+      background-color: $tertiary-color;
+      border-radius: 8px;
+      padding: 8px 64px;
+
+      a {
+        color: $primary-color;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+
+    .hero-heading {
+      font-size: 120px;
+      margin: 0;
+    }
+
+    .hero-sub-heading {
+      font-size: 40px;
+      position: relative;
+      top: -12%;
+      margin-top: 0;
+    }
+  }
+}
