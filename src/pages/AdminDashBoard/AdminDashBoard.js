@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
 //components
-import SideBar from '../../components/AdminDashBoard/SideBar/SideBar';
+import SideBar from "../../components/AdminDashBoard/SideBar/SideBar";
 
 //react-router
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function AdminDashBoard() {
   return (
     <div>
       <SideBar />
-      <Outlet/>
+      <Outlet />
     </div>
-  )
+  );
 }
 
-export default AdminDashBoard
+export default AdminDashBoard;
