@@ -1,0 +1,43 @@
+.events-section {
+  height: 100vh;
+  .columns {
+    height: 80vh;
+    margin: 5rem auto;
+    // width: min(90%, 75rem);
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: 50% 50%;
+
+    gap: 1em;
+    background-color: aquamarine;
+    .bg-color {
+      background-color: aqua;
+      width: 100%;
+      height: 100%;
+      grid-row: 1/3;
+      .top-img {
+        // height: 50%;
+        // width: 100%;
+        grid-row: 1/2;
+      }
+      .bottom-img {
+        grid-row: 2/3;
+      }
+    }
+    .img1 {
+      // grid-row: 1/4;
+      width: 100%;
+      height: 100%;
+    }
+    .img2,
+    .img3,
+    .img4 {
+      width: 90%;
+      height: 100%;
+    }
+    .img5 {
+      width: 100%;
+      height: 50%;
+    }
+  }
+}
