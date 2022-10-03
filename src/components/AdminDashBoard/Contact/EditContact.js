@@ -1,57 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./EditContact.scss";
+// redux
 
-//firebase
-import { app } from "../../../firebase/config";
-import { collection, addDoc } from "firebase/firestore";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addFirebaseHandler,
+  getFirebaseDataHandler,
+  updateFirebaseHandler,
+} from "../../../ReduxStore/thunks/Contact/ContactDatabaseThunks.js";
 
 function EditContact() {
-  const [contact, setContact] = useState({
-    heading: "",
-    text: "",
+  const dispatch = useDispatch();
+  const [formInfo, setFormInfo] = useState({
+    contactHeading: "",
   });
+  const dataId = useSelector((state) => state.contact.dataId);
 
   const onChangeHandler = (e) => {
-    setContact((prev) => {
+    setFormInfo((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+  useEffect(() => {
+    // gets realtime snapshots of firebase database
 
-  const addDocsHandler = async (e) => {
+    dispatch(getFirebaseDataHandler(setFormInfo));
+  }, [dispatch]);
+
+  // form submit handler function
+  const submitFormHandler = (e) => {
     e.preventDefault();
+    //checks to see if there is  contact collection
 
-    const ref = collection(app, "contact");
-
-    await addDoc(ref, {
-      heading: contact.heading,
-      text: contact.text,
-    });
-
-    setContact({
-      heading: "",
-      text: "",
-    });
+    if (dataId === null) {
+      // if it does not exist create one
+      dispatch(addFirebaseHandler(formInfo.contactHeading));
+    }
+    //  if it exists-update the data
+    else {
+      dispatch(updateFirebaseHandler(dataId, formInfo.contactHeading));
+    }
   };
-  return (
-    <form onSubmit={addDocsHandler}>
-      <label htmlFor="heading">heading</label>
-      <input
-        type="text"
-        id="heading"
-        name="heading"
-        value={contact.heading}
-        onChange={onChangeHandler}
-      />
-      {/* <label htmlFor="text">Email Address</label>
-      <input
-        type="text"
-        id="text"
-        name="text"
-        value={contact.text}
-        onChange={onChangeHandler}
-      /> */}
 
-      <button>Save</button>
-    </form>
+  return (
+    <div className="contact-section">
+      <h1>Contact</h1>
+      <form className="edit-contact-form" onSubmit={submitFormHandler}>
+        <label htmlFor="heading">heading</label>
+        <br />
+        <input
+          type="text"
+          id="heading"
+          name="heading"
+          value={formInfo.contactHeading}
+          onChange={onChangeHandler}
+          placeholder="let's mix it up!"
+        />
+        <div className="button">
+          <button>Save</button>
+        </div>
+      </form>
+    </div>
   );
 }
 

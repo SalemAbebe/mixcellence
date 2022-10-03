@@ -8,11 +8,13 @@ import servicesReducer from "./slices/ServicesSlice";
 import testimonialReducer from "./slices/TestimonialSlice";
 import notificationReducer from "./slices/NotificationSlice";
 import FAQReducer from "./slices/FAQSlice";
+import contactReducer from "./slices/ContactSlice";
 
 const store = configureStore({
   reducer: {
     about: aboutReducer,
     bartenders: bartenderReducer,
+    contact: contactReducer,
     hero: heroReducer,
     services: servicesReducer,
     testimonial: testimonialReducer,

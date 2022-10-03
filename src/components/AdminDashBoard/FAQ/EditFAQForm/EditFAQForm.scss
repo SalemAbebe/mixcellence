@@ -1,0 +1,74 @@
+$primary-color: #fff;
+$secondary-color: #504c9c;
+$tertiary-color: #9794cc;
+$background-color: #e8e5ee;
+$black: #000;
+$color: #232323;
+
+.editFQA-form {
+  height: 100vh;
+  .editFAQ {
+    // display: flex;
+    width: 90%;
+    margin: 0 auto;
+
+    margin-bottom: 30px;
+    input {
+      width: 100%;
+      //   margin: auto;
+      border: 1px solid $black;
+      color: $color;
+      font-family: "Poppins", sans-serif;
+      font-size: 24;
+      font-weight: 400;
+      padding: 0 10px;
+      line-height: 32px;
+    }
+    textarea {
+      width: 100%;
+      border: 1px solid $black;
+      color: $color;
+      font-family: "Poppins", sans-serif;
+      font-size: 16;
+      font-weight: 400;
+      padding: 0 10px;
+      line-height: 24px;
+    }
+  }
+  .button1 {
+    // align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 17px;
+    // position: absolute;
+    width: 129px;
+    height: 44px;
+    // left: 50%;
+    // top: 100%;
+
+    .btn-save {
+      background-color: $tertiary-color;
+      cursor: pointer;
+      padding: 11px 45px;
+      border: none;
+
+      /* Body Large */
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 28px;
+      color: $primary-color;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+  .button-add {
+    // left: 40%;
+  }
+}

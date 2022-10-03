@@ -1,0 +1,88 @@
+$primary-color: #fff;
+$secondary-color: #504c9c;
+$tertiary-color: #9794cc;
+$background-color: #e8e5ee;
+$black: #000;
+$color: #232323;
+
+.contact-section {
+  // width: 90%;
+  // // margin: auto;
+  // // margin-left: auto;
+  // margin-right: 0;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: left;
+  position: relative;
+  right: -15%;
+  width: 80%;
+  height: 100vh;
+
+  h1 {
+    width: 65%;
+    // margin-left: 10%;
+    margin: auto;
+    font-size: 48px;
+    text-align: center;
+    // font-family: "DM Serif Display", serif;
+    text-align: center;
+    margin-bottom: 60px;
+
+    border-bottom: 1px solid $color;
+  }
+  .edit-contact-form {
+    width: 80%;
+    margin: auto;
+    align-content: center;
+    .heading {
+      font-size: 14px;
+      line-height: 22px;
+      color: $color;
+      //   align-items: center;
+    }
+    input {
+      width: 329px;
+      height: 40px;
+      margin: 5px 0;
+      border: 1px solid $black;
+      //   text-align: center;
+
+      // #cityAndDate {
+      //   @extend input;
+      // }
+    }
+    .button {
+      // align-items: center;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 17px;
+      position: absolute;
+      width: 129px;
+      height: 44px;
+      left: 50%;
+      top: 80%;
+
+      button {
+        background-color: $tertiary-color;
+        cursor: pointer;
+        padding: 11px 45px;
+        border: none;
+
+        /* Body Large */
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+        color: $primary-color;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+    }
+  }
+}
