@@ -37,10 +37,10 @@ function Services() {
               />
               {showInfo === index ? (
                 <div className="info-wrapper">
-                  <h3 className="bartender-heading">{service.heading}</h3>
+                  <h3 className="service-heading">{service.heading}</h3>
                   <hr />
-                  <p className="bartender-sub-heading">{service.subHeading}</p>
-                  <p className="bartender-text">{service.text} </p>
+                  <p className="service-sub-heading">{service.subHeading}</p>
+                  <p className="service-text">{service.text} </p>
                 </div>
               ) : null}
             </div>

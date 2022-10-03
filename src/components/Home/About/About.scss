@@ -1,0 +1,38 @@
+@import "../../../App.scss";
+
+.about-container {
+  align-items: center;
+  background-color: $background-color;
+  display: flex;
+  height: 764px;
+  justify-content: center;
+
+  .about-wrapper {
+    background-color: $primary-color;
+    height: 676px;
+    width: 1312px;
+
+    .about-heading {
+      text-align: center;
+    }
+
+    .about-img-text-wrapper {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      height: 537px;
+      padding: 0 2em;
+
+      .text-wrapper {
+        display: flex;
+        height: 396px;
+        justify-content: flex-start;
+
+        .about-text {
+          margin: 0;
+          padding: 0 2em;
+        }
+      }
+    }
+  }
+}
