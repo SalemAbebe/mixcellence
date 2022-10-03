@@ -40,7 +40,7 @@ const EditFAQForm = () => {
     else {
       dispatch(
         updateFirebaseHandler(
-          dataId1,
+          dataId,
           formInfo.question,
           formInfo.answer,
           dataId1,
