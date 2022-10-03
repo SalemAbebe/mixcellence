@@ -4,7 +4,7 @@ import React from "react";
 import { servicesData } from "./ServicesData";
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { servicesActions } from "../../../ReduxStore/slices/ServicesSlice";
 
 //styles
@@ -23,7 +23,7 @@ function Services() {
   return (
     <div className="services-container">
       <h1 className="service-title">Let us service you</h1>
-      <div className="service-container">
+      <div className="services-wrapper">
         {servicesData.map((service, index) => {
           return (
             <div key={service.id} className="service-wrapper">
@@ -36,11 +36,11 @@ function Services() {
                 onClick={() => services(index)}
               />
               {showInfo === index ? (
-                <div className="info-wrapper">
-                  <h3 className="bartender-heading">{service.heading}</h3>
+                <div className="service-info-wrapper">
+                  <h3 className="service-heading">{service.heading}</h3>
                   <hr />
-                  <p className="bartender-sub-heading">{service.subHeading}</p>
-                  <p className="bartender-text">{service.text} </p>
+                  <p className="service-sub-heading">{service.subHeading}</p>
+                  <p className="service-text">{service.text} </p>
                 </div>
               ) : null}
             </div>
