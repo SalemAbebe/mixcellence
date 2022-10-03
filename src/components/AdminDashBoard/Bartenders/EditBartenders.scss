@@ -1,5 +1,6 @@
+@import "../../../App.scss";
+
 .edit-bartenders-container {
-  border-color: red;
   position: relative;
   right: -10%;
   width: 90%;
@@ -23,10 +24,10 @@
       flex-direction: column;
 
       .add-bartender-section-button {
-        background-color: #42c960;
+        background-color: $icon-green;
         border: none;
         border-radius: 50%;
-        color: black;
+        color: $black;
         cursor: pointer;
         height: 60px;
         font-size: 40px;
@@ -36,7 +37,7 @@
     }
 
     span {
-      border-top: 1px solid black;
+      border-top: 1px solid $black;
       width: 60%;
     }
   }

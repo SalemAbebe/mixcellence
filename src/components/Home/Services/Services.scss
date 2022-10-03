@@ -1,0 +1,49 @@
+@import "../../../App.scss";
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 0;
+
+  .service-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+    width: 100%;
+
+    .service-wrapper {
+      display: flex;
+
+      .info-wrapper {
+        height: 266px;
+        padding: 0.5em;
+        width: 316px;
+
+        .bartender-sub-heading {
+          margin-top: 0;
+        }
+
+        .bartender-text {
+          margin-top: 3em;
+        }
+      }
+
+      .service-img {
+        height: 350px;
+        width: 205px;
+        transition: width 500ms;
+
+        &.active {
+          height: 350px;
+          width: 316px;
+          transition: width 500ms;
+        }
+      }
+    }
+  }
+
+  .service-title {
+    text-align: center;
+  }
+}
