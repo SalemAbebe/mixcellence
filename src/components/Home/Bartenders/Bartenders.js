@@ -27,7 +27,7 @@ function Bartenders() {
   };
 
   return (
-    <div className="bartenders-container">
+    <div id="bartenders" className="bartenders-container">
       <h1 className="bartenders-title">Meet Your Bartender</h1>
       <div className="bartenders-wrapper">
         {bartendersData.map((bartender, index) => {

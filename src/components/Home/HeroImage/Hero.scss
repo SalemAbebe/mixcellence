@@ -1,4 +1,5 @@
 @import "../../../App.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
 .hero-container {
   align-items: center;
@@ -45,12 +46,14 @@
     }
 
     .hero-heading {
+      font-family: "DM Serif Display", serif;
       font-size: 120px;
+      letter-spacing: 8px;
       margin: 0;
     }
 
     .hero-sub-heading {
-      font-size: 40px;
+      font-size: 48px;
       position: relative;
       top: -12%;
       margin-top: 0;
