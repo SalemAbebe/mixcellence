@@ -22,7 +22,7 @@ function Login() {
       />
       <div className="login-wrapper">
         <h1>MIXELLENCE</h1>
-        {forgotPassword ? <LoginForm /> : <ForgotPassword />}
+        {forgotPassword ? <ForgotPassword /> : <LoginForm />}
         <LoginHomePageButton />
       </div>
     </div>
