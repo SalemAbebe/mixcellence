@@ -5,11 +5,11 @@ $background-color: #e8e5ee;
 $black: #000;
 
 .FAQ-home {
+  height: 85vh;
+  width: 100vw;
+  background-color: $background-color;
   .FAQ-home-title {
-    background-color: $background-color;
-    height: 85vh;
-    width: 100vw;
-    padding: 15px 0 50px 0;
+    // padding: 15px 0 50px 0;
     .FAQ-home-title {
       text-align: center;
       padding: 25px 0 50px;

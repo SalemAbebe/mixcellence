@@ -4,15 +4,18 @@ import "./Events.scss";
 function Events() {
   return (
     <div className="events-section">
+      <div className="events-home-title">
+        <h1>Latest Events</h1>
+      </div>
       <div className="events-home-wrapper columns">
-        <div className="bg-color">
+        <div className="column-left">
           <img
             className="img1"
             src={process.env.PUBLIC_URL + "Images/Events-1.png"}
             alt=""
           />
         </div>
-        <div className="bg-color">
+        <div className="column-middle">
           <div className="top-img">
             <img
               className="img2"
@@ -28,7 +31,7 @@ function Events() {
             />
           </div>
         </div>
-        <div className="bg-color">
+        <div className="colum-right">
           <div className="top-img">
             <img
               className="img4"
