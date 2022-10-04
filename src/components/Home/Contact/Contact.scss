@@ -19,7 +19,7 @@
       align-items: center;
       display: flex;
       justify-content: space-between;
-      margin-top: 42px;
+      margin-top: 30px;
       width: 100%;
 
       .contact-submit-button-wrapper {
@@ -46,10 +46,25 @@
       .contact-text {
         border: 1px solid rgba(0, 0, 0, 0.32);
         border-radius: 8px;
+        padding-right: 1em;
+
+        &.error {
+          background-color: $icon-red;
+          border-color: $icon-red;
+        }
       }
 
       .contact-text-label {
         font-weight: bold;
+
+        &.error {
+          color: $icon-red;
+        }
+      }
+
+      .text-error-message {
+        color: $icon-red;
+        margin: 0;
       }
     }
 
@@ -61,22 +76,37 @@
     .input-wrapper {
       display: flex;
       justify-content: space-between;
-      margin: 22px 0 42px 0;
+      margin: 22px 0 22px 0;
       width: 100%;
 
       .contact-input-control {
         display: flex;
         flex-direction: column;
 
-        .control-input {
+        .contact-input {
           border: 1px solid rgba(0, 0, 0, 0.32);
           border-radius: 8px;
+          font-size: 24px;
           height: 64px;
           width: 561px;
+
+          &.error {
+            background-color: $icon-red;
+            border-color: $icon-red;
+          }
         }
 
         .contact-input-label {
           font-weight: bold;
+
+          &.error {
+            color: $icon-red;
+          }
+        }
+
+        .input-error-message {
+          color: $icon-red;
+          margin: 0;
         }
       }
     }

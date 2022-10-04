@@ -27,6 +27,7 @@ function Notifications() {
       notificationActions.handleSuccess({ isSuccess: false, message: null })
     );
   };
+
   return (
     <div>
       <Fragment>
