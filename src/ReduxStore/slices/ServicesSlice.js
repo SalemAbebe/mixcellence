@@ -16,6 +16,7 @@ const servicesSlice = createSlice({
       text: null,
       photo: null,
     },
+    showInfo: 0,
   },
   reducers: {
     handleDeleteService(state, action) {
@@ -64,6 +65,9 @@ const servicesSlice = createSlice({
         text: action.payload.text,
         photo: action.payload.photo,
       };
+    },
+    handleShowInfo(state, action) {
+      state.showInfo = action.payload;
     },
   },
 });

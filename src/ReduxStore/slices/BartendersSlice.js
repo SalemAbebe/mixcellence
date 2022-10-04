@@ -3,12 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const bartendersSlice = createSlice({
   name: "bartenders",
   initialState: {
-    componentArrSize: [],
-    componentCounter: 0,
-    dataId: [],
-    formArr: [],
-    imageURL: [],
-    isLoading: false,
     bartendersInfo: {
       id: null,
       heading: null,
@@ -27,8 +21,28 @@ const bartendersSlice = createSlice({
         link: null,
       },
     },
+    componentArrSize: [],
+    componentCounter: 0,
+    dataId: [],
+    formArr: [],
+    imageURL: [],
+    isLoading: false,
+    showInfo: 0,
   },
   reducers: {
+    handleBartendersInfo(state, action) {
+      state.dataId.splice(action.payload.index, 1, action.payload.id);
+      state.bartendersInfo = {
+        id: action.payload.id,
+        heading: action.payload.heading,
+        subHeading: action.payload.subHeading,
+        text: action.payload.text,
+        instagram: action.payload.instagram,
+        twitter: action.payload.twitter,
+        facebook: action.payload.facebook,
+        photo: action.payload.photo,
+      };
+    },
     handleDeleteBartender(state, action) {
       state.componentArrSize.splice(action.payload, 1);
       state.dataId.splice(action.payload, 1);
@@ -72,18 +86,8 @@ const bartendersSlice = createSlice({
     handleIsLoading(state, action) {
       state.isLoading = action.payload;
     },
-    handleBartendersInfo(state, action) {
-      state.dataId.splice(action.payload.index, 1, action.payload.id);
-      state.bartendersInfo = {
-        id: action.payload.id,
-        heading: action.payload.heading,
-        subHeading: action.payload.subHeading,
-        text: action.payload.text,
-        instagram: action.payload.instagram,
-        twitter: action.payload.twitter,
-        facebook: action.payload.facebook,
-        photo: action.payload.photo,
-      };
+    handleShowInfo(state, action) {
+      state.showInfo = action.payload;
     },
   },
 });

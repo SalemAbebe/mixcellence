@@ -1,3 +1,5 @@
+@import "../../../../App.scss";
+
 .service-container {
   display: flex;
   flex-direction: column;
@@ -16,9 +18,9 @@
       flex-direction: column;
 
       .service-delete-section-button {
-        background-color: #f36a43;
+        background-color: $icon-red;
         border: none;
-        color: white;
+        color: $primary-color;
         cursor: pointer;
         font-size: 16px;
         padding: 8px 44px;
@@ -29,9 +31,9 @@
       display: flex;
 
       .service-form-button {
-        background-color: #9794cc;
+        background-color: $secondary-color;
         border: none;
-        color: white;
+        color: $primary-color;
         cursor: pointer;
         font-size: 16px;
         font-weight: 700;

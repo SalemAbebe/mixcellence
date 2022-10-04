@@ -22,7 +22,6 @@ const store = configureStore({
     notification: notificationReducer,
     services: servicesReducer,
     testimonial: testimonialReducer,
-    notification: notificationReducer,
     FAQ: FAQReducer,
   },
 });

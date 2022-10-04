@@ -1,6 +1,8 @@
+@import "../../../../../App.scss";
+
 .input-file-container {
   align-items: center;
-  border: 3px dashed black;
+  border: 3px dashed $black;
   display: flex;
   height: 284px;
   justify-content: center;
