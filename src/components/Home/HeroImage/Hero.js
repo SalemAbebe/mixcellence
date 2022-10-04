@@ -15,8 +15,8 @@ function Hero() {
       </div>
 
       <div className="hero-wrapper">
-        <h1 className="hero-heading">MIXELLENCE</h1>
-        <h3 className="hero-sub-heading">Mobile Bar Event Bartending</h3>
+        <p className="hero-heading">MIXELLENCE</p>
+        <p className="hero-sub-heading">Mobile Bar Event Bartending</p>
         <div className="hero-book-us-button-wrapper">
           <a href="#book-us">Book us!</a>
         </div>

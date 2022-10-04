@@ -1,0 +1,39 @@
+@import "../../../App.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+
+  .header-book-us {
+    background-color: $secondary-color;
+    border-radius: 8px;
+    color: $primary-color;
+    padding: 8px 32px;
+    text-decoration: none;
+  }
+
+  .header-list {
+    display: flex;
+    gap: 8em;
+    list-style: none;
+
+    .header-item {
+      .header-links {
+        color: $black;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .header-name {
+    color: $black;
+    cursor: pointer;
+    font-family: "DM Serif Display", serif;
+    font-size: 24px;
+    letter-spacing: 8px;
+    text-decoration: none;
+  }
+}
