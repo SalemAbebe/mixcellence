@@ -11,6 +11,7 @@ import testimonialReducer from "./slices/TestimonialSlice";
 
 import FAQReducer from "./slices/FAQSlice";
 import contactReducer from "./slices/ContactSlice";
+import eventsReducer from "./slices/EventsSlice";
 
 const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ const store = configureStore({
     services: servicesReducer,
     testimonial: testimonialReducer,
     FAQ: FAQReducer,
+    events: eventsReducer,
   },
 });
 
