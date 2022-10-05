@@ -1,18 +1,50 @@
-$primary-color: #fff;
-$secondary-color: #504c9c;
-$tertiary-color: #9794cc;
-$background-color: #e8e5ee;
-$black: #000;
+@import "../../../App.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
 .FAQ-home {
-  height: 85vh;
-  width: 100vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 678px;
   background-color: $background-color;
-  .FAQ-home-title {
-    // padding: 15px 0 50px 0;
-    .FAQ-home-title {
-      text-align: center;
-      padding: 25px 0 50px;
+
+  .FAQ-header {
+    font-family: "DM Serif Display", serif;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .FAQ-wrapper {
+    height: 542px;
+    width: 1086px;
+
+    .faq-section {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+
+      .faq-control {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .faq-title {
+          font-size: 24px;
+          margin: 0;
+          transition: 500ms ease-out;
+        }
+
+        .symbol {
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+
+      span {
+        background-color: $black;
+        height: 1px;
+        width: 100%;
+      }
     }
   }
 }
