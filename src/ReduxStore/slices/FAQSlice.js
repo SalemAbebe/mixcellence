@@ -9,6 +9,7 @@ const FAQSlice = createSlice({
     dataId1: null,
     question1: "",
     answer1: "",
+    showAnswer: 0,
   },
   reducers: {
     FAQInfo(state, action) {
@@ -18,6 +19,9 @@ const FAQSlice = createSlice({
       state.dataId1 = action.payload.id1;
       state.question1 = action.payload.question1;
       state.answer1 = action.payload.answer1;
+    },
+    handleShowAnswer(state, action) {
+      state.showAnswer = action.payload;
     },
   },
 });
