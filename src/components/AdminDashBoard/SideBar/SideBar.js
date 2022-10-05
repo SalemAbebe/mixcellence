@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import "./SideBar.scss";
 //components
 import Welcome from "./Welcome/Welcome";
-// image
-import homeIcon from "../../../Assets/images/home-icon.png";
 
 function SideBar() {
   return (
@@ -15,7 +13,11 @@ function SideBar() {
         <Welcome />
         <button className="btn-icon">
           <NavLink to={"/"}>
-            <img className="home-icon" src={homeIcon} alt="home-icon" />
+            <img
+              className="home-icon"
+              src={process.env.PUBLIC_URL + "Images/home-icon.png"}
+              alt="home-icon"
+            />
           </NavLink>
         </button>
         <ul>

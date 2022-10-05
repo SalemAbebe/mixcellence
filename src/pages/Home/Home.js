@@ -1,4 +1,6 @@
 import React from "react";
+import Events from "../../components/Home/Events/Events";
+import FAQ from "../../components/Home/FAQ/FAQ";
 
 //components
 import About from "../../components/Home/About/About";
@@ -19,6 +21,8 @@ function Home() {
       <About />
       <Bartenders />
       <Testimonial />
+      <Events />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
