@@ -1,0 +1,114 @@
+@import "../../../App.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+.contact-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 812px;
+
+  .contact-form {
+    box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
+    display: flex;
+    flex-direction: column;
+    height: 676px;
+    padding: 51px;
+    width: 1312px;
+
+    .contact-button-container {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      width: 100%;
+
+      .contact-submit-button-wrapper {
+        height: 40px;
+        width: 121px;
+
+        .contact-submit-button {
+          background-color: $secondary-color;
+          border: none;
+          border-radius: 8px;
+          color: $primary-color;
+          cursor: pointer;
+          padding: 8px 32px;
+        }
+      }
+    }
+
+    .contact-text-control {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      .contact-text {
+        border: 1px solid rgba(0, 0, 0, 0.32);
+        border-radius: 8px;
+        padding-right: 1em;
+
+        &.error {
+          background-color: $icon-red;
+          border-color: $icon-red;
+        }
+      }
+
+      .contact-text-label {
+        font-weight: bold;
+
+        &.error {
+          color: $icon-red;
+        }
+      }
+
+      .text-error-message {
+        color: $icon-red;
+        margin: 0;
+      }
+    }
+
+    .contact-title {
+      font-size: 48px;
+      font-family: "DM Serif Display", serif;
+    }
+
+    .input-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin: 22px 0 22px 0;
+      width: 100%;
+
+      .contact-input-control {
+        display: flex;
+        flex-direction: column;
+
+        .contact-input {
+          border: 1px solid rgba(0, 0, 0, 0.32);
+          border-radius: 8px;
+          font-size: 24px;
+          height: 64px;
+          width: 561px;
+
+          &.error {
+            background-color: $icon-red;
+            border-color: $icon-red;
+          }
+        }
+
+        .contact-input-label {
+          font-weight: bold;
+
+          &.error {
+            color: $icon-red;
+          }
+        }
+
+        .input-error-message {
+          color: $icon-red;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

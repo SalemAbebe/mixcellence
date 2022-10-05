@@ -21,7 +21,7 @@ function RoutesPath() {
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route element={<Home />} path="home" />
+        <Route element={<Home />} path="/home" />
         <Route element={<AdminDashBoard />} exact path="admin">
           <Route element={<EditHero />} path="edit-hero" />
           <Route element={<EditServices />} path="edit-services" />

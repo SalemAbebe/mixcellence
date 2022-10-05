@@ -3,6 +3,9 @@ import React from "react";
 //redux
 import { useSelector } from "react-redux";
 
+//styles
+import "./Success.scss";
+
 function SuccessModal({ successHandler }) {
   const success = useSelector((state) => state.notification.success);
 
