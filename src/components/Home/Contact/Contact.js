@@ -161,10 +161,7 @@ function Contact() {
           )}
         </div>
         <div className="contact-button-container">
-          <ReCAPTCHA
-            ref={reCaptcha}
-            sitekey="6LfnHlUiAAAAAAml0gPOoQMPHQW63zTXDsTpOm-Y"
-          />
+          <ReCAPTCHA ref={reCaptcha} sitekey={siteKey} />
           <div className="contact-submit-button-wrapper">
             <button className="contact-submit-button">Submit</button>
           </div>
