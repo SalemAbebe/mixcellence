@@ -1,4 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, Fragment } from "react";
+import ReactDOM from "react-dom";
+
+//components
+import ContactModal from "./ContactModal/ContactModal";
+import ContactOverlay from "./ContactModal/ContactOverlay";
 
 //emailjs
 import emailjs from "@emailjs/browser";
@@ -10,14 +15,16 @@ import { useValidation } from "../../../Hooks/useValidation";
 import ReCAPTCHA from "react-google-recaptcha";
 
 //redux
-import { useDispatch } from "react-redux";
-import { notificationActions } from "../../../ReduxStore/slices/NotificationSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { contactActions } from "../../../ReduxStore/slices/ContactSlice";
 
 //styles
 import "./Contact.scss";
 
 function Contact() {
   const dispatch = useDispatch();
+  const showModal = useSelector((state) => state.contact.modal.showModal);
+
   const {
     value: name,
     isValid: nameValid,
@@ -68,16 +75,16 @@ function Contact() {
         )
         .then((res) => {
           dispatch(
-            notificationActions.handleSuccess({
-              isSuccess: true,
+            contactActions.handleShowModal({
+              showModal: true,
               message: "Your message has been sent!",
             })
           );
         })
         .catch(() => {
           dispatch(
-            notificationActions.handleError({
-              isError: true,
+            contactActions.handleShowModal({
+              showModal: true,
               message: "Your message has not been sent!",
             })
           );
@@ -93,8 +100,29 @@ function Contact() {
   const nameClassName = nameError ? "error" : null;
   const textClassName = textError ? "error" : null;
 
+  const showModalHandler = () => {
+    dispatch(
+      contactActions.handleShowModal({
+        showModal: false,
+        message: "",
+      })
+    );
+  };
+
   return (
     <div className="contact-container">
+      <Fragment>
+        {showModal &&
+          ReactDOM.createPortal(
+            <ContactModal showModalHandler={showModalHandler} />,
+            document.getElementById("contact-root")
+          )}
+        {showModal &&
+          ReactDOM.createPortal(
+            <ContactOverlay showModalHandler={showModalHandler} />,
+            document.getElementById("overlay-root")
+          )}
+      </Fragment>
       <form ref={form} onSubmit={onSubmitHandler} className="contact-form">
         <h2 className="contact-title">Let's mix it up!</h2>
         <div className="input-wrapper">
