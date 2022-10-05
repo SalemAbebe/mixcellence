@@ -2,8 +2,12 @@ import React, { useRef, Fragment } from "react";
 import ReactDOM from "react-dom";
 
 //components
+import ContactEmailInput from "./ContactEmailInput";
 import ContactModal from "./ContactModal/ContactModal";
+import ContactNameInput from "./ContactNameInput";
 import ContactOverlay from "./ContactModal/ContactOverlay";
+import ContactSubmitButton from "./ContactSubmitButton";
+import ContactTextInput from "./ContactTextInput";
 
 //emailjs
 import emailjs from "@emailjs/browser";
@@ -49,6 +53,7 @@ function Contact() {
     handleOnChange: textOnChange,
     reset: textReset,
   } = useValidation((value) => value.trim() !== "");
+
   const form = useRef();
   const reCaptcha = useRef();
   const serviceKey = process.env.REACT_APP_EMAILJS_SERVICE_KEY;
@@ -64,7 +69,6 @@ function Contact() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const token = reCaptcha.current.getValue();
-    console.log(name, email, text);
     if (token && formIsValid) {
       emailjs
         .sendForm(
@@ -126,73 +130,31 @@ function Contact() {
       <form ref={form} onSubmit={onSubmitHandler} className="contact-form">
         <h2 className="contact-title">Let's mix it up!</h2>
         <div className="input-wrapper">
-          <div className="contact-input-control">
-            <label
-              className={"contact-input-label " + nameClassName}
-              htmlFor="name"
-            >
-              Name
-            </label>
-            <input
-              className={"contact-input " + nameClassName}
-              id="name"
-              name="name"
-              type="text"
-              value={name}
-              onBlur={nameOnBlur}
-              onChange={nameOnChange}
-            />
-            {nameError && (
-              <p className="input-error-message">Please enter a name!</p>
-            )}
-          </div>
-          <div className="contact-input-control">
-            <label
-              className={"contact-input-label " + emailClassName}
-              htmlFor="name"
-            >
-              Email
-            </label>
-            <input
-              className={"contact-input " + emailClassName}
-              id="email"
-              name="email"
-              type="email"
-              value={email}
-              onBlur={emailOnBlur}
-              onChange={emailOnChange}
-            />
-            {emailError && (
-              <p className="input-error-message">Please enter an email!</p>
-            )}
-          </div>
+          <ContactNameInput
+            name={name}
+            nameClassName={nameClassName}
+            nameError={nameError}
+            nameOnBlur={nameOnBlur}
+            nameOnChange={nameOnChange}
+          />
+          <ContactEmailInput
+            email={email}
+            emailClassName={emailClassName}
+            emailError={emailError}
+            emailOnBlur={emailOnBlur}
+            emailOnChange={emailOnChange}
+          />
         </div>
-        <div className="contact-text-control">
-          <label
-            className={"contact-text-label " + textClassName}
-            htmlFor="contact-text"
-          >
-            Message
-          </label>
-          <textarea
-            className={"contact-text " + textClassName}
-            cols="30"
-            id="contact-text"
-            name="text"
-            rows="10"
-            value={text}
-            onBlur={textOnBlur}
-            onChange={textOnChange}
-          ></textarea>
-          {textError && (
-            <p className="text-error-message">Please fill out a message</p>
-          )}
-        </div>
+        <ContactTextInput
+          text={text}
+          textClassName={textClassName}
+          textError={textError}
+          textOnBlur={textOnBlur}
+          textOnChange={textOnChange}
+        />
         <div className="contact-button-container">
           <ReCAPTCHA ref={reCaptcha} sitekey={siteKey} />
-          <div className="contact-submit-button-wrapper">
-            <button className="contact-submit-button">Submit</button>
-          </div>
+          <ContactSubmitButton />
         </div>
       </form>
     </div>
