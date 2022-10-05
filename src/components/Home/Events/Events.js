@@ -1,9 +1,42 @@
-import React from "react";
+import React, { Fragment } from "react";
+import ReactDOM from "react-dom";
+
 import "./Events.scss";
 
+//components
+import EventsModal from "./EventsModal/EventsModal";
+import EventsOverlay from "./EventsModal/EventsOverlay";
+
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { eventsAction } from "../../../ReduxStore/slices/EventsSlice";
+
 function Events() {
+  const dispatch = useDispatch();
+  const eventModal = useSelector((state) => state.events.eventModal);
+
+  const eventModalHandler = () => {
+    dispatch(eventsAction.handleEventModal(false));
+  };
+
+  const photoHandler = () => {
+    dispatch(eventsAction.handleEventModal(true));
+  };
+
   return (
     <div className="events-section">
+      <Fragment>
+        {eventModal &&
+          ReactDOM.createPortal(
+            <EventsModal />,
+            document.getElementById("events-root")
+          )}
+        {eventModal &&
+          ReactDOM.createPortal(
+            <EventsOverlay eventModalHandler={eventModalHandler} />,
+            document.getElementById("overlay-root")
+          )}
+      </Fragment>
       <div className="events-home-title">
         <h1>Latest Events</h1>
       </div>
@@ -13,6 +46,8 @@ function Events() {
             className="img1"
             src={process.env.PUBLIC_URL + "Images/events/Events-1.png"}
             alt=""
+            onClick={photoHandler}
+            style={{ cursor: "pointer" }}
           />
         </div>
         {/* <div className="column-middle"> */}

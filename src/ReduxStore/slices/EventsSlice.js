@@ -3,27 +3,31 @@ import { createSlice } from "@reduxjs/toolkit";
 const eventsSlice = createSlice({
   name: "events",
   initialState: {
-    photoInfo1: {
-      id: null,
-      photo1: null,
-      imgURL: null,
-      isLoading: false,
-    },
+    // photoInfo1: {
+    //   id: null,
+    //   photo1: null,
+    //   imgURL: null,
+    //   isLoading: false,
+    // },
+    photoArr: [],
+    isLoading: false,
+    eventModal: false,
   },
   reducers: {
-    handleDatabaseInfo(state, action) {
-      state.photoInfo1 = {
-        id: action.payload.id,
-        photo1: action.payload.photo1,
-        imgURL: action.payload.imgURL,
-        // isLoading: action.payload.isLoading,
-      };
-    },
-    handleImgURL(state, action) {
-      state.photoInfo1.imgURL = action.payload;
+    handlePhotoArr(state, action) {
+      if (state.photoArr[action.payload.index] === undefined) {
+        state.photoArr.push(action.payload.photo);
+      } else {
+        state.photoArr.splice(action.payload.index, 1, action.payload.photo);
+      }
+      // isLoading: action.payload.isLoading,
+      // };
     },
     handleIsLoading(state, action) {
       state.photoInfo1.isLoading = action.payload;
+    },
+    handleEventModal(state, action) {
+      state.eventModal = action.payload;
     },
   },
 });

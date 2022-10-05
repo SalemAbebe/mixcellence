@@ -5,13 +5,13 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { eventsAction } from "../../slices/EventsSlice";
 import { notificationActions } from "../../slices/NotificationSlice";
 
-export const eventsStorageHandler = (data) => {
+export const eventsStorageHandler = (data, index) => {
   return async (dispatch) => {
     dispatch(eventsAction.handleIsLoading(true));
 
     //connect to storage
     const storage = getStorage();
-    const storageRef = ref(storage, "images/events/event.png");
+    const storageRef = ref(storage, `images/events/${index}/event.png`);
 
     //save file to storage
     await uploadBytes(storageRef, data)
@@ -37,7 +37,12 @@ export const eventsStorageHandler = (data) => {
     await getDownloadURL(storageRef)
       .then((res) => {
         fileURL = res;
-        dispatch(eventsAction.handleImageURL(fileURL));
+        dispatch(
+          eventsAction.handlePhotoArr({
+            index: index,
+            photo: fileURL,
+          })
+        );
         dispatch(
           notificationActions.handleSuccess({
             isSuccess: true,

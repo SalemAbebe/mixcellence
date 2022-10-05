@@ -12,10 +12,10 @@ function FAQ() {
         <div className="question-answer">
           <div className="question-wrapper">
             <p className="question"></p>
-            <p>
+            <div>
               <hr className="1" />
               <hr />
-            </p>
+            </div>
           </div>
         </div>
         <div className="answer">
