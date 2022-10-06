@@ -24,7 +24,7 @@ function Events() {
   };
 
   return (
-    <div className="events-section">
+    <div id="events" className="events-section">
       <Fragment>
         {eventModal &&
           ReactDOM.createPortal(

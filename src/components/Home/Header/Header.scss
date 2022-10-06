@@ -3,8 +3,12 @@
 
 .header-container {
   align-items: center;
+  background-color: $primary-color;
   display: flex;
   justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 
   .header-book-us {
     background-color: $secondary-color;

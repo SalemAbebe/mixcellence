@@ -24,7 +24,7 @@ const eventsSlice = createSlice({
       // };
     },
     handleIsLoading(state, action) {
-      state.photoInfo1.isLoading = action.payload;
+      state.isLoading = action.payload;
     },
     handleEventModal(state, action) {
       state.eventModal = action.payload;

@@ -52,7 +52,7 @@ function EditContact() {
           type="text"
           id="heading"
           name="heading"
-          value={formInfo.contactHeading}
+          value={formInfo?.contactHeading}
           onChange={onChangeHandler}
           placeholder="let's mix it up!"
         />
