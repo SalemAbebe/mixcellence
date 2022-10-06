@@ -1,0 +1,29 @@
+@import "../../../../../App.scss";
+
+.main-event-input-file-container {
+  align-items: center;
+  border: 3px dashed $black;
+  display: flex;
+  height: 566px;
+  justify-content: center;
+  width: 536px;
+
+  .main-event-input-file-control {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 16px;
+    }
+
+    .main-event-input-file-button {
+      border: none;
+      border-radius: 50%;
+      height: 60px;
+      font-size: 40px;
+      margin-bottom: 4px;
+      width: 60px;
+    }
+  }
+}

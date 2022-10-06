@@ -114,7 +114,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact-container">
+    <div id="book-us" className="contact-container">
       <Fragment>
         {showModal &&
           ReactDOM.createPortal(

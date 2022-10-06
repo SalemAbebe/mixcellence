@@ -20,8 +20,9 @@ function FAQ() {
     }
   };
   return (
-    <div className="FAQ-home">
+    <div id="faq" className="FAQ-home">
       <h1 className="FAQ-header">FAQ</h1>
+
       <div className="FAQ-wrapper">
         {faqData.map((item, index) => {
           return (

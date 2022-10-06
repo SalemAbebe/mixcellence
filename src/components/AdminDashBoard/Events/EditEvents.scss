@@ -1,0 +1,33 @@
+.edit-events-section {
+  position: relative;
+  right: -10%;
+  width: 90%;
+
+  .edit-events-header {
+    text-align: center;
+  }
+
+  .edit-events-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    position: relative;
+    right: -10%;
+    width: 90%;
+
+    .small-events-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      .small-events-first-row {
+        display: flex;
+        gap: 1em;
+      }
+      .small-events-second-row {
+        display: flex;
+        gap: 1em;
+      }
+    }
+  }
+}
