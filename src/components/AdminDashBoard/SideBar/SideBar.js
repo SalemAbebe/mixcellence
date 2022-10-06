@@ -11,16 +11,17 @@ function SideBar() {
       <div className="admin-header">MIXCELLENCE</div>
       <div className="sidebar">
         <Welcome />
-        <button className="btn-icon">
-          <NavLink to={"/"}>
-            <img
-              className="home-icon"
-              src={process.env.PUBLIC_URL + "Images/home-icon.png"}
-              alt="home-icon"
-            />
-          </NavLink>
-        </button>
+
         <ul>
+          <li>
+            <NavLink to={"/"}>
+              <img
+                className="home-icon"
+                src={process.env.PUBLIC_URL + "Images/home-icon.png"}
+                alt="home-icon"
+              />
+            </NavLink>
+          </li>
           <li>
             <NavLink to={"/admin/edit-hero"}>Hero Image</NavLink>
           </li>
