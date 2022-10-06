@@ -38,7 +38,7 @@ function Events() {
           )}
       </Fragment>
       <div className="events-home-title">
-        <h1>Latest Events</h1>
+        <h1 className="events-header">Latest Events</h1>
       </div>
       <div className="events-home-wrapper columns">
         <div className="column-left">
@@ -50,7 +50,7 @@ function Events() {
             style={{ cursor: "pointer" }}
           />
         </div>
-        {/* <div className="column-middle"> */}
+
         <div className="top-img">
           <img
             className="img2"
