@@ -78,7 +78,6 @@ const EditFAQForm = () => {
           placeholder="Question"
         />
         <br />
-        <br />
         <textarea
           name="answer"
           id=""
@@ -88,27 +87,63 @@ const EditFAQForm = () => {
         ></textarea>
       </div>
       <div className="editFAQ">
-        <input type="text" />
+        <input
+          type="text"
+          name="question"
+          id="question"
+          value={formInfo.question1}
+          onChange={onChangeHandler}
+          placeholder="Question"
+        />
         <br />
-        <br />
-
-        <textarea name="" id="" cols="30" rows="3"></textarea>
-      </div>
+        <textarea
+          name="answer"
+          id=""
+          cols="30"
+          rows="3"
+          placeholder="Answer"
+        ></textarea>
+      </div>{" "}
       <div className="editFAQ">
-        <input type="text" /> <br />
+        <input
+          type="text"
+          name="question"
+          id="question"
+          value={formInfo.question1}
+          onChange={onChangeHandler}
+          placeholder="Question"
+        />
         <br />
-        <textarea name="" id="" cols="30" rows="3"></textarea>
-      </div>
+        <textarea
+          name="answer"
+          id=""
+          cols="30"
+          rows="3"
+          placeholder="Answer"
+        ></textarea>
+      </div>{" "}
+      {/* <div className="editFAQ">
+        <input
+          type="text"
+          name="question"
+          id="question"
+          value={formInfo.question}
+          onChange={onChangeHandler}
+          placeholder="Question"
+        />
+        <br />
+        <textarea
+          name="answer"
+          id=""
+          cols="30"
+          rows="3"
+          placeholder="Answer"
+        ></textarea>
+      </div> */}
       <div className="editFAQ">
-        <input type="text" /> <br />
-        <br />
-        <textarea name="" id="" cols="30" rows="3"></textarea>
-      </div>
-      <div>
         <button className="button-add">+</button>
         <p>Add a question</p>
-      </div>
-      <div className="button1">
+
         <button className="btn-save" type="submit">
           Save
         </button>

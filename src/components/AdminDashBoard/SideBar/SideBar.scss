@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .admin-header {
   background-color: #e8e5ee;
   padding: 20px 0;
@@ -14,18 +16,59 @@
   top: 0;
   z-index: 10;
   background-color: #fff;
+  padding-top: 20px;
   box-shadow: 2px 4px 2px #8b8c8c;
   box-shadow: rgba(0, 0, 0, 0.35) 05px 0px 40px;
-  width: 15%;
+  width: 269px;
   height: 90vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75%;
+    padding: 0;
 
-  li {
-    text-decoration: "none";
-    list-style: none;
+    li {
+      text-decoration: "none";
+      list-style: none;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: $black;
+        font-family: "poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
   }
-}
-.btn-icon {
-  border: none;
-  background-color: #fff;
+  .home-icon {
+    border: none;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+  }
+  button {
+    background-color: $tertiary-color;
+    cursor: pointer;
+    padding: 8px 45px;
+    border: none;
+    margin-top: 25px;
+
+    /* Body Large */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: $primary-color;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
 }

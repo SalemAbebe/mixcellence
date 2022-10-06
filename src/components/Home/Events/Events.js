@@ -56,6 +56,7 @@ function Events() {
             className="img2"
             src={process.env.PUBLIC_URL + "Images/events/Events-2.png"}
             alt=""
+            onClick={photoHandler}
           />
         </div>
         <div className="bottom-img">
@@ -63,6 +64,7 @@ function Events() {
             className="img3"
             src={process.env.PUBLIC_URL + "Images/events/Events-3.png"}
             alt=""
+            onClick={photoHandler}
           />
         </div>
         {/* </div>
@@ -72,6 +74,7 @@ function Events() {
             className="img4"
             src={process.env.PUBLIC_URL + "Images/events/Events-4.png"}
             alt=""
+            onClick={photoHandler}
           />
         </div>
         <div className="bottom-img">
@@ -79,6 +82,7 @@ function Events() {
             className="img5"
             src={process.env.PUBLIC_URL + "Images/events/Events-5.png"}
             alt=""
+            onClick={photoHandler}
           />
         </div>
         {/* </div> */}
