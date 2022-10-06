@@ -1,28 +1,23 @@
 import React from "react";
 import "./Testimonial.scss";
+import { testimonialData } from "./TestimonialData";
 
 function Testimonial() {
   return (
     <div className="testimonials-home">
       <div className="testimonials-home-title">
-        <h1>What Some have to say</h1>
+        <h1 className="testimonial-header">What Some have to say</h1>
       </div>
       <div className="testimonials-home-wrapper">
-        <div className="testimonial-home">
-          <div className="name">xx</div>
-          <div className="about-mixcellence"></div>
-          <div className="address"></div>
-        </div>
-        <div className="testimonial-home">
-          <div className="name"></div>
-          <div className="about-mixcellence"></div>
-          <div className="address"></div>
-        </div>
-        <div className="testimonial-home">
-          <div className="name"></div>
-          <div className="about-mixcellence"></div>
-          <div className="address"></div>
-        </div>
+        {testimonialData.map((item, idex) => {
+          return (
+            <div key={item.id} className="testimonial-home">
+              <div className="name">{item.name}</div>
+              <div className="about-mixcellence">{item.testimonial}</div>
+              <div className="address">{item.cityAndDate}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

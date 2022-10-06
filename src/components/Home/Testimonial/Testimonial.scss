@@ -1,17 +1,19 @@
-$primary-color: #fff;
-$secondary-color: #504c9c;
-$tertiary-color: #9794cc;
-$background-color: #e8e5ee;
-$black: #000;
+@import "../../../App.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
 .testimonials-home {
   background-color: $background-color;
-  height: 85vh;
+  height: 75vh;
   // width: 100vw;
-  padding: 15px 0 50px 0;
+  // padding: 15px 0 50px 0;
   .testimonials-home-title {
     text-align: center;
-    padding: 25px 0 50px;
+    padding: 10px 0 20px;
+    .testimonial-header {
+      font-family: "DM Serif Display", serif;
+      font-size: 48px;
+      text-align: center;
+    }
   }
   .testimonials-home-wrapper {
     width: 90%;
@@ -20,8 +22,8 @@ $black: #000;
     justify-content: space-between;
 
     .testimonial-home {
-      width: 30%;
-      height: 50vh;
+      width: 32%;
+      height: 44vh;
       background-color: $primary-color;
       padding: 45px;
       align-items: center;
@@ -30,6 +32,23 @@ $black: #000;
       -moz-box-shadow: -1px 15px 18px 14px rgba(0, 0, 0, 0.13);
       .name {
         border-bottom: 1px solid $black;
+        font-size: 24px;
+        text-align: center;
+        line-height: 32px;
+        color: $color;
+        font-family: "DM Serif Display", serif;
+        padding: 0 0 20px;
+      }
+      .about-mixcellence {
+        font-size: 16px;
+        line-height: 24px;
+        color: $color;
+        font-family: "Poppins", sans-serif;
+        padding: 50px 20px;
+      }
+      .address {
+        text-align: center;
+        font-size: 14px;
       }
     }
   }
