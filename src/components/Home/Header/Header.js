@@ -6,9 +6,9 @@ import "./Header.scss";
 const Header = () => {
   return (
     <div className="header-container">
-      <p className="header-name" to={"/"}>
+      <a className="header-name" href="#hero">
         MIXELLENCE
-      </p>
+      </a>
       <ul className="header-list">
         <li className="header-item">
           <a className="header-links" href="#events">

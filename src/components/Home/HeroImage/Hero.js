@@ -5,7 +5,7 @@ import "./Hero.scss";
 
 function Hero() {
   return (
-    <div className="hero-container">
+    <div id="hero" className="hero-container">
       <div className="hero-img-wrapper">
         <img
           className="hero-img"
