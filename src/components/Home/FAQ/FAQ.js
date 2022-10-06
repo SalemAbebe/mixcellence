@@ -21,7 +21,7 @@ function FAQ() {
   };
   return (
     <div className="FAQ-home">
-      <h2 className="FAQ-header">FAQ</h2>
+      <h1 className="FAQ-header">FAQ</h1>
       <div className="FAQ-wrapper">
         {faqData.map((item, index) => {
           return (
