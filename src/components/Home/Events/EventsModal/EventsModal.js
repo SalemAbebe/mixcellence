@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //styles
 import "./EventsModal.scss";
@@ -32,12 +32,12 @@ function EventsModal() {
     if (index !== null) {
       setBigImg(
         mainArr.find((item) => {
-          return item.id === index;
+          return item.id === parseInt(index);
         })
       );
       setSmallArr(
         mainArr.filter((item) => {
-          return item.id !== index;
+          return item.id !== parseInt(index);
         })
       );
     }
