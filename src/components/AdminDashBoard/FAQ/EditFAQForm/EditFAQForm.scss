@@ -8,7 +8,9 @@ $color: #232323;
 .editFQA-form {
   height: 100vh;
   .editFAQ {
-    // display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
     margin: 0 auto;
 
@@ -23,6 +25,14 @@ $color: #232323;
       font-weight: 400;
       padding: 0 10px;
       line-height: 32px;
+      &::placeholder {
+        color: $color;
+        font-family: "Poppins", sans-serif;
+        font-size: 24;
+        font-weight: 400;
+        padding: 0 10px;
+        line-height: 32px;
+      }
     }
     textarea {
       width: 100%;
@@ -34,25 +44,34 @@ $color: #232323;
       padding: 0 10px;
       line-height: 24px;
     }
-  }
-  .button1 {
+
     // align-items: center;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 17px;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: flex-start;
+    // padding: 0px;
+    // gap: 17px;
     // position: absolute;
-    width: 129px;
-    height: 44px;
+    // width: 129px;
+    // height: 44px;
     // left: 50%;
     // top: 100%;
-
+    .button-add {
+      border: none;
+      border-radius: 50%;
+      height: 60px;
+      font-size: 40px;
+      margin-bottom: 4px;
+      width: 60px;
+      cursor: pointer;
+    }
     .btn-save {
       background-color: $tertiary-color;
       cursor: pointer;
       padding: 11px 45px;
       border: none;
+      width: 129px;
+      height: 44px;
 
       /* Body Large */
       font-family: "Poppins";
@@ -67,8 +86,5 @@ $color: #232323;
       order: 0;
       flex-grow: 0;
     }
-  }
-  .button-add {
-    // left: 40%;
   }
 }
