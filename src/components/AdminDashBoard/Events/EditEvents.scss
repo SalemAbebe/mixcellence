@@ -1,10 +1,18 @@
+@import "../../../App.scss";
 .edit-events-section {
   position: relative;
   right: -10%;
   width: 90%;
 
   .edit-events-header {
+    width: 65%;
+    margin: auto;
+    font-size: 48px;
     text-align: center;
+    font-family: "DM Serif Display", serif;
+    text-align: center;
+    margin: 20px auto 60px;
+    border-bottom: 1px solid $color;
   }
 
   .edit-events-wrapper {
@@ -12,8 +20,8 @@
     justify-content: center;
     gap: 1em;
     position: relative;
-    right: -10%;
-    width: 90%;
+    right: -8%;
+    width: 92%;
 
     .small-events-wrapper {
       display: flex;
