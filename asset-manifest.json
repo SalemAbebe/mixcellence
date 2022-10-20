@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mixcellence/static/css/main.c640e1e0.css",
+    "main.js": "/mixcellence/static/js/main.64483017.js",
+    "static/js/787.24570345.chunk.js": "/mixcellence/static/js/787.24570345.chunk.js",
+    "index.html": "/mixcellence/index.html",
+    "main.c640e1e0.css.map": "/mixcellence/static/css/main.c640e1e0.css.map",
+    "main.64483017.js.map": "/mixcellence/static/js/main.64483017.js.map",
+    "787.24570345.chunk.js.map": "/mixcellence/static/js/787.24570345.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c640e1e0.css",
+    "static/js/main.64483017.js"
+  ]
+}
